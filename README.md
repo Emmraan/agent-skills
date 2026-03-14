@@ -32,7 +32,7 @@ Contributing
 - Open a pull request and include a short summary of the new skill and representative examples.
 
 License & contact
-- This repository is licensed under the MIT License.
+- This repository is licensed under the [MIT License](/LICENSE)
 - For questions about structure or contributions, open an issue in this repository.
 
 Acknowledgements
