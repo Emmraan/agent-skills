@@ -26,7 +26,7 @@ npx SKILL add https://github.com/vercel-labs/skills --skill find-skills
 npx skills --help
 ```
 
-Documentation: For full CLI options and usage, see https://SKILL.sh/docs
+Documentation: For full CLI options and usage, see [skills.sh](https://SKILL.sh/docs) docs
 
 Contributing
 - To add a new skill, create a new folder inside `SKILL` folder, named for the domain and add a `SKILL.md` file.
