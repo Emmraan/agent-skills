@@ -21,6 +21,9 @@ npx SKILL add https://github.com/Emmraan/agent-skills --skill frontend-core
 
 # Example (fetch the `find-skills` skill from Vercel Labs' skills repo):
 npx SKILL add https://github.com/vercel-labs/skills --skill find-skills
+
+# to view all commands:
+npx skills --help
 ```
 
 Documentation: For full CLI options and usage, see https://SKILL.sh/docs
