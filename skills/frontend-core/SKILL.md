@@ -33,6 +33,50 @@ Do NOT activate this skill for backend-only architecture questions with no front
 
 ## Instructions
 
+### Mandatory UI Code Generation Defaults (Apply before all phases)
+
+These defaults exist to make LLM-generated frontend code consistent, modern, and production-ready when user requirements are incomplete.
+
+- **Default UI Generation Profile (use unless user explicitly overrides):**
+  - Framework/runtime: **React + TypeScript + Vite + NextJS**.
+  - Styling: **Tailwind CSS + CSS custom properties design tokens**.
+  - Component primitives: accessible, reusable primitives with variant-based APIs and tokenized styles.
+  - Data fetching/server state: **TanStack Query**.
+  - Forms/validation: **React Hook Form + Zod**.
+  - Icons: one consistent icon set (e.g., Lucide) across the app.
+  - Testing baseline: **Vitest + Testing Library + Playwright + axe-core**.
+- **Fast-path implementation mode:** If the user asks to build UI code directly, generate code immediately using defaults. Ask clarifying questions only when blockers are critical (missing API contract, auth model, or deployment/runtime constraints that would make code incorrect).
+- **Consistency-first rule:** The model must prioritize visual and structural consistency over novelty. Avoid one-off components and ad-hoc styles.
+
+### Non-Negotiable UI Quality Checklist (Must pass for generated code)
+
+- Clean architecture: feature-oriented structure, reusable components, no duplicated patterns.
+- Visual consistency: shared tokens for typography, spacing, radius, color, shadow, and motion.
+- Component state coverage: `default`, `hover`, `focus-visible`, `active`, `disabled`, `loading`, `error`.
+- Responsive integrity: mobile-first behavior validated across defined breakpoints.
+- Accessibility baseline: semantic HTML, keyboard operability, visible focus, proper labels/ARIA, WCAG contrast.
+- Production readiness: loading/empty/error states, defensive error handling, no placeholder-grade UI artifacts.
+- Maintainability: strict typing, predictable naming, bounded component size, minimal prop complexity.
+
+### LLM Output Contract for UI Code Tasks (Required output shape)
+
+For direct frontend code generation tasks, structure the output in this order:
+1. Defaults selected (and why).
+2. File tree.
+3. Implemented components and layout primitives.
+4. Accessibility notes.
+5. Responsive behavior notes.
+6. Quality checklist compliance summary.
+
+### Anti-Pattern Blacklist (Never generate these)
+
+- Raw color/spacing/shadow/radius values in component code when tokens exist.
+- Inconsistent spacing scale usage inside the same feature.
+- Clickable non-semantic elements for primary actions (`div`/`span` instead of `button`/`a`).
+- Custom interactive components without keyboard and ARIA behavior.
+- Multiple divergent button/input/card styles across features without tokenized variants.
+- Inline style sprawl in production components when a project styling system exists.
+
 ### Phase 1 — Frontend Context and Requirements Assessment
 
 1. **Clarify the frontend challenge type.** Before producing any guidance, determine what the user needs. Classify the request into one of these categories and state it explicitly:
@@ -191,6 +235,8 @@ Do NOT activate this skill for backend-only architecture questions with no front
    - **Controlled vs. Uncontrolled:** Form elements and interactive components should support both patterns. Default to uncontrolled with an option to control via props.
    - **Forwarding and extensibility:** Components should forward `ref`, `className`/`class`, and spread remaining HTML attributes to the root element.
    - **Conditional rendering:** Avoid deeply nested ternaries. Extract conditions into descriptive boolean variables or early-return patterns.
+   - **No visual drift rule:** Do not introduce one-off visual patterns for core controls (buttons, inputs, cards, form feedback, badges). Extend variants in shared components instead.
+   - **Semantic interaction rule:** Primary actions must use semantic controls (`button`, `a`, form elements). Never rely on `onClick` on non-interactive tags for core workflows.
 
 10. **Design the component API for critical components.** For each complex or widely-used component identified in the critical user interactions (Step 3), produce a detailed component specification:
     - **Component name and purpose.**
@@ -202,6 +248,19 @@ Do NOT activate this skill for backend-only architecture questions with no front
     - **Visual variants** (sizes, colors, states: default, hover, active, disabled, loading, error).
     - **Usage example** (code snippet showing the most common usage).
     - **Edge cases** (empty state, overflow content, loading state, error state, truncation behavior).
+
+10A. **Use canonical component blueprints for foundational UI.** For code generation tasks, always scaffold and reuse canonical blueprints for:
+    - **Button:** `variant`, `size`, `loading`, `disabled`, `icon`, `iconPosition`; keyboard/focus-visible behavior and accessible loading text.
+    - **Input + FormField wrapper:** label, description, error text, required state, `aria-describedby` wiring, invalid state behavior.
+    - **Card:** header/body/footer slots, elevation and border variants from tokens.
+    - **Modal/Dialog:** open state, title/description, focus trap, escape key handling, focus restore on close.
+    - **List/Table shell:** loading/empty/error/data states; responsive behavior (table-to-cards strategy when required).
+
+10B. **Standardize UI state messaging patterns.** All generated UI must use consistent message and interaction patterns:
+    - Form errors: concise, field-specific, actionable.
+    - Empty states: explain context + primary next action.
+    - Loading states: skeletons/spinners that preserve layout stability.
+    - Success/error feedback: consistent toast/inline banner patterns with predictable severity semantics.
 
 ### Phase 4 — State Management Architecture
 
@@ -265,6 +324,11 @@ Do NOT activate this skill for backend-only architecture questions with no front
     - **Responsive design tokens:** Define breakpoints and the mobile-first vs. desktop-first approach. Specify the breakpoint values and usage pattern (media queries, container queries, or utility classes).
     - **Typography scale:** Define the type scale (sizes, weights, line heights, letter spacing) as tokens. Ensure fluid typography if required (`clamp()`).
     - **Spacing scale:** Define a consistent spacing scale (e.g., 4px base: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80).
+    - **Token enforcement rules (mandatory):**
+      - No raw hex/rgb/hsl colors in component-level code when token variables exist.
+      - No ad-hoc spacing/radius/shadow values in component-level code; consume tokenized scales only.
+      - Every component variant must map to semantic/component tokens, not hard-coded visual values.
+      - Define required token namespaces and naming convention once, then reuse consistently across all features.
 
 16. **Define responsive design strategy.** Specify:
     - **Approach:** Mobile-first (recommended) or desktop-first. Justify.
@@ -274,6 +338,12 @@ Do NOT activate this skill for backend-only architecture questions with no front
     - **Responsive component patterns:** Define how components adapt (hide/show elements, stack/unstack, resize, simplify). Avoid separate mobile/desktop components — prefer responsive adaptation within a single component.
     - **Touch targets:** Minimum 44×44px for interactive elements on touch devices (WCAG 2.5.8).
     - **Responsive images:** `srcset` and `sizes` strategy, art direction with `<picture>`, lazy loading with `loading="lazy"`.
+    - **Strict layout primitives (mandatory):**
+      - Define standard container widths per breakpoint and use them consistently.
+      - Define default page shells (marketing, dashboard, form-heavy workflow, content detail).
+      - Define section spacing rhythm (vertical spacing scale) and enforce it across pages.
+      - Define standard grid columns and gutter values per breakpoint.
+      - Define reusable empty/loading/error layout blocks to avoid inconsistent state presentation.
 
 ### Phase 6 — API Integration and Data Layer
 
@@ -311,6 +381,10 @@ Do NOT activate this skill for backend-only architecture questions with no front
       - Dependent fields (field B options change based on field A value).
       - File uploads (progress tracking, preview, size/type validation, chunked upload for large files).
       - Autosave (debounce interval, conflict resolution, dirty state tracking).
+    - **Form UX consistency rules:**
+      - Keep label/help/error placement consistent for all fields.
+      - Use one validation message style guide (tone, length, actionability) across the product.
+      - Keep button labels and CTA hierarchy consistent across all forms (`primary`, `secondary`, `destructive`, `ghost`).
 
 ### Phase 7 — Performance Architecture
 
@@ -551,8 +625,10 @@ Do NOT activate this skill for backend-only architecture questions with no front
     - **Performance issue** (user reports a performance problem): Execute Steps 19–21 as a diagnostic and optimization workflow. Ask for Lighthouse scores, bundle analysis output, or specific symptoms.
     - **Full frontend architecture** (user asks for a complete frontend design): Execute all steps sequentially, producing the full deliverable from Step 29.
     - **Code review / architecture review** (user presents existing code or architecture): Map the existing implementation against the framework, identify gaps against each step, and provide a prioritized list of improvements with effort estimates.
+    - **Direct UI code implementation** (user asks to build frontend code now): Use fast-path implementation mode with the Default UI Generation Profile unless the user has explicitly specified alternatives. Ask questions only for critical blockers.
 
     Always state which depth level you are operating at and why.
+    For direct UI code tasks, also follow the mandatory LLM Output Contract defined at the top of this section.
 
 31. **Maintain an iterative, collaborative approach.** Frontend architecture evolves as the product evolves. After delivering the initial architecture:
     - Invite the user to challenge any decision with their specific constraints.
