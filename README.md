@@ -17,10 +17,10 @@ You can pull SKILL from a Git repository using the `SKILL` CLI. Example usage:
 
 ```bash
 # Add a specific skill from repo
-npx SKILL add https://github.com/Emmraan/agent-skills --skill frontend-core
+npx skills add https://github.com/Emmraan/agent-skills --skill frontend-core
 
 # Example (fetch the `find-skills` skill from Vercel Labs' skills repo):
-npx SKILL add https://github.com/vercel-labs/skills --skill find-skills
+npx skills add https://github.com/vercel-labs/skills --skill find-skills
 
 # to view all commands:
 npx skills --help
