@@ -1,7 +1,7 @@
 ---
 name: seo-strategy-and-optimization
 description: A unified, end-to-end SEO capability that guides the AI agent through every phase of search engine optimization — from understanding website goals and performing keyword research to executing technical SEO improvements, optimizing content, analyzing performance, and documenting strategic decisions. This skill serves as the agent's complete framework for improving organic search visibility, traffic, and rankings through structured, data-driven methodology.
-----
+---
 
 # Skills
 
