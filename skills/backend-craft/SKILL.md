@@ -1,6 +1,10 @@
 ---
 name: backend-craft
 description: An intent-first, production-grade backend implementation skill that ensures every backend the AI agent builds — whether Next.js, Express, Fastify, NestJS, Hono, or any other framework — always matches the user's intent and is engineered to industry standards. Covers intent-first analysis before any code, backend-type classification (CRUD/MVP, Production-SaaS, BFF/API, Internal), production-grade non-negotiables, a library-first principle that prioritizes mature human-written libraries over AI from-scratch code, anti-AI-tell avoidance, and per-project uniqueness.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

@@ -1,6 +1,10 @@
 ---
 name: database-architecture
 description: A unified, end-to-end database architecture skill that guides the AI agent through the complete lifecycle of database design — from understanding data requirements and access patterns through technology selection, logical and physical data modeling, schema design, indexing, partitioning, replication, performance optimization, migration strategy, data governance, and operational readiness. This skill serves as the agent's core decision framework for all data storage, modeling, and database infrastructure tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

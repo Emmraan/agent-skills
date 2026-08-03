@@ -1,6 +1,10 @@
 ---
 name: authentication
 description: A unified, end-to-end authentication skill that guides the AI agent through the complete lifecycle of authentication system design and implementation — from understanding identity requirements and selecting authentication strategies through credential management, token design, session handling, OAuth 2.0/OIDC flows, multi-factor authentication, API and service-to-service authentication, account recovery, brute-force protection, audit logging, and ongoing security governance. This skill serves as the agent's core decision framework for all authentication, identity verification, and credential management tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

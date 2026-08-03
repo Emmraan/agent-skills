@@ -1,6 +1,10 @@
 ---
-name: observability-architecture-design
+name: monitoring
 description: A unified monitoring and observability skill that guides the AI agent through the complete process of designing, implementing, and documenting monitoring strategies, alerting policies, distributed tracing, logging architectures, SLI/SLO frameworks, and operational visibility plans for distributed systems, cloud infrastructure, and application environments.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

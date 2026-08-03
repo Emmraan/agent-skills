@@ -1,6 +1,10 @@
 ---
-name: ui-ux-experience-architect
+name: ui-ux
 description: A comprehensive, end-to-end UI/UX design and experience architecture skill that guides the AI agent through the complete product design workflow — from understanding business goals and user needs, through information architecture, interface layout, visual systems, interaction design, accessibility, and usability evaluation, to producing structured, well-rationalized design decisions and documentation. When the ask involves high-craft visual identity, appealing/aesthetic screen styling, landing/showcase look-and-feel, or making the UI look human-crafted (not AI-generated), compose this skill with frontend-craft for the execution-grade visual craft guidance.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

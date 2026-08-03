@@ -1,6 +1,10 @@
 ---
-name: scalability-and-performance-architecture
+name: scalability
 description: A unified, end-to-end scalability and performance architecture skill that guides the AI agent through analyzing workload patterns, identifying bottlenecks, designing horizontally and vertically scalable distributed systems, optimizing data storage and caching layers, planning resilience and auto-scaling strategies, and producing structured, well-documented scalability architecture decisions for systems expected to handle large-scale traffic, data growth, and distributed workloads.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

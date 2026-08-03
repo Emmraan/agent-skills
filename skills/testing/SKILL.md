@@ -1,6 +1,10 @@
 ---
 name: testing
 description: A unified, end-to-end backend testing skill that guides the AI agent through the complete lifecycle of test engineering — from test strategy design and test architecture through unit testing, integration testing, contract testing, end-to-end testing, performance testing, security testing, data management, test infrastructure, test observability, continuous testing in CI/CD, test maintenance, and establishing a sustainable testing culture. This skill serves as the agent's core decision framework for all backend test design, test implementation, test infrastructure, quality assurance, and test operations tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

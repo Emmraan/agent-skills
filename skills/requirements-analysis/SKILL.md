@@ -1,6 +1,10 @@
 ---
 name: requirements-analysis
 description: A unified, end-to-end requirements analysis skill that guides the AI agent through stakeholder identification, requirement elicitation, classification and modeling, conflict resolution, prioritization, validation, traceability planning, and production of structured requirements specifications that serve as the foundation for product development and architectural decisions. When those requirements must be turned directly into a working, production-grade backend, compose this skill with backend-craft for the intent-first, library-first implementation.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

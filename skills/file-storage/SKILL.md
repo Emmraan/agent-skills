@@ -1,6 +1,10 @@
 ---
 name: file-storage
 description: A unified, end-to-end file storage skill that guides the AI agent through the complete lifecycle of file storage architecture and engineering — from identifying storage requirements and selecting storage technologies through upload and download design, bucket and key architecture, file processing pipelines, access control, encryption, metadata management, CDN and delivery optimization, lifecycle management, cost optimization, compliance, reliability, observability, and ongoing operational management. This skill serves as the agent's core decision framework for all file storage, binary asset management, media handling, and object storage tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

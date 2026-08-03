@@ -1,6 +1,10 @@
 ---
 name: product-architecture
 description: A unified, end-to-end product architecture skill that guides the AI agent through understanding product requirements, designing system structure, defining components and interfaces, evaluating architectural tradeoffs, planning for scalability and reliability, and documenting all architectural decisions in a structured, actionable manner.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

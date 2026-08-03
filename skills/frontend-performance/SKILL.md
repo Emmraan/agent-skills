@@ -1,6 +1,10 @@
 ---
 name: frontend-performance
 description: A unified, end-to-end frontend performance engineering skill that guides the AI agent through performance auditing, diagnosis, Core Web Vitals optimization, bundle analysis, rendering efficiency, network optimization, asset delivery, runtime profiling, memory management, performance budgeting, monitoring instrumentation, and the production of measurable, prioritized performance improvement plans grounded in real-world metrics and modern browser capabilities.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

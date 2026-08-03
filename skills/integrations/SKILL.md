@@ -1,6 +1,10 @@
 ---
 name: integrations
 description: A unified, end-to-end third-party and external system integration skill that guides the AI agent through the complete lifecycle of integration engineering — from evaluating external services and designing integration architecture through API client design, authentication, data mapping, webhook handling, resilience patterns, rate limit management, data synchronization, error handling, idempotency, testing, security, compliance, cost management, observability, and ongoing integration operations. This skill serves as the agent's core decision framework for all external API consumption, third-party service integration, webhook processing, data synchronization, and inter-system communication tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

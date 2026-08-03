@@ -1,6 +1,10 @@
 ---
-name: unified-version-control-and-source-code-management
+name: version-control
 description: A comprehensive, end-to-end skill that enables the AI agent to manage all aspects of version control and source code management — including repository organization, branching strategies, commit practices, collaboration workflows, code review processes, merge conflict resolution, release versioning, CI/CD integration, access control, monorepo management, and repository policy documentation — across modern software development environments using industry-standard tools and practices.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

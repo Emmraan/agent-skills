@@ -1,6 +1,10 @@
 ---
 name: backend-core
 description: A unified, end-to-end backend architecture skill that guides the AI agent through the complete lifecycle of backend system design — from understanding product requirements through service decomposition, API design, data modeling, infrastructure planning, scalability engineering, and architectural documentation. This skill serves as the agent's core decision framework for all backend-core architecture tasks. When the user expects production-grade backend CODE to be implemented (Express, Fastify, NestJS, Next.js API, etc.), compose this skill with backend-craft for the intent-first, library-first implementation execution.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

@@ -1,6 +1,10 @@
 ---
 name: frontend-craft
 description: An intent-first, mode-aware high-craft frontend skill that ensures every UI the AI agent produces looks deliberately human-crafted — never AI-generated. Covers intent analysis before any code, mode classification (Awwwards-level showcase vs. Google/Vercel-grade SaaS), popular production libraries for icons, components, and motion, anti-AI-tell avoidance, per-project uniqueness, and the ability to replicate user-provided code/URL/screenshot references faithfully.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

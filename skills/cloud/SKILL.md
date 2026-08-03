@@ -1,6 +1,10 @@
 ---
-name: multi-cloud-architecture-design
+name: cloud
 description: A unified multi-cloud architecture framework that guides the AI agent through end-to-end cloud infrastructure design, service selection, and platform planning across AWS, Google Cloud Platform, and Microsoft Azure — from initial requirements gathering through final architecture documentation.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

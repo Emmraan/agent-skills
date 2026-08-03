@@ -1,6 +1,10 @@
 ---
 name: caching
 description: A unified, end-to-end caching skill that guides the AI agent through the complete lifecycle of caching architecture and engineering — from identifying caching opportunities and selecting caching layers through cache topology design, caching pattern selection, key design, serialization, invalidation strategy, consistency management, cache warming, eviction policies, distributed cache architecture, CDN and edge caching, cache observability, failure handling, capacity planning, performance tuning, and ongoing cache operations. This skill serves as the agent's core decision framework for all caching design, implementation, optimization, and troubleshooting tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

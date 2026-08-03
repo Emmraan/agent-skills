@@ -1,6 +1,10 @@
 ---
 name: frontend-core
 description: A unified, end-to-end frontend engineering skill that guides the AI agent through frontend architecture design, component modeling, state management, styling strategies, API integration, performance optimization, accessibility, testing, build tooling, and the production of maintainable, scalable, and resilient client-side applications following modern best practices. When UI visual craft / aesthetic polish / landing / showcase design is the ask, compose this skill with frontend-craft for intent-first, human-crafted UI execution.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

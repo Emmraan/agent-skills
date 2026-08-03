@@ -1,6 +1,10 @@
 ---
 name: database-performance
 description: A unified, end-to-end database performance skill that guides the AI agent through the complete lifecycle of database performance engineering — from identifying and diagnosing performance problems through query optimization, indexing strategy, configuration tuning, connection management, lock and contention resolution, I/O optimization, caching, capacity planning, performance testing, and establishing ongoing performance governance. This skill serves as the agent's core decision framework for all database performance analysis, optimization, and scalability tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

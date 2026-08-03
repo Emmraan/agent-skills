@@ -1,6 +1,10 @@
 ---
-name: devops-platform-engineering-architect
+name: devops
 description: A comprehensive, end-to-end DevOps and platform engineering skill that guides the AI agent through the complete infrastructure and operational workflow — from understanding system requirements and designing cloud architecture, through CI/CD pipelines, infrastructure as code, containerization, environment management, observability, security, reliability engineering, and disaster recovery, to producing structured, well-rationalized operational decisions and documentation.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

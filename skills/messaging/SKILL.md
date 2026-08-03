@@ -1,6 +1,10 @@
 ---
 name: messaging
 description: A unified, end-to-end messaging and asynchronous processing skill that guides the AI agent through the complete lifecycle of messaging architecture — from identifying asynchronous communication needs and selecting messaging technologies through message design, topic and queue architecture, delivery guarantees, ordering, idempotency, error handling, dead-letter processing, event-driven architecture patterns, stream processing, schema governance, messaging infrastructure, observability, capacity planning, and ongoing operational management. This skill serves as the agent's core decision framework for all messaging, event-driven architecture, asynchronous processing, and inter-service communication tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

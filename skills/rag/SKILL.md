@@ -1,6 +1,10 @@
 ---
-name: rag-system-architect
+name: rag
 description: A comprehensive skill for designing, building, and optimizing a complete Retrieval Augmented Generation (RAG) system, covering knowledge ingestion, document processing, embedding, indexing, retrieval, context construction, prompt engineering, response generation, evaluation, and system optimization.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills

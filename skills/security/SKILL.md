@@ -1,6 +1,10 @@
 ---
 name: security
 description: A unified, end-to-end backend security skill that guides the AI agent through the complete lifecycle of security engineering — from threat modeling and security architecture through application security, infrastructure hardening, data protection, secrets management, dependency and supply chain security, container and runtime security, network security, security testing, vulnerability management, incident response planning, compliance governance, and ongoing security operations. This skill serves as the agent's core decision framework for all backend security design, implementation, assessment, and remediation tasks.
+license: MIT
+metadata:
+  author: Emmraan
+  version: 1.0.0
 ---
 
 # Skills
