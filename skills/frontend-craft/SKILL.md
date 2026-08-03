@@ -50,7 +50,13 @@ Never generate UI directly from a prompt. Execute these steps in order and brief
 
 5. **Take user input where ambiguous.** If style direction, hero disposition, color mood, section order, or page scope is unclear, ask the user targeted questions (2–4 max) so the output matches their expectation. Never silently pick a default when the user's intent is genuinely ambiguous.
 
-6. **Only then generate code.**
+6. **Run the MoodboardGate for award-level builds.** For Mode A (and Mode C with a premium client), calibrate the aesthetic direction before any UI layout:
+   - **Positioning calibration:** Premium (sleek, functional, high-tech, accessible perfection — Apple / fintech) vs. Luxury (exclusive, artisanal, high-scarcity, heritage-driven — Rolex / haute couture). State which one and what it forbids (luxury forbids generic SaaS-meets-tech gloss; premium forbids heritage styling).
+   - **Keyword direction:** Map client preferences into exact visual keywords — `Dark Mode Aesthetics`, `Modern Fintech Atmosphere`, `Clean & Immersive Layout`, `High Visual Hierarchy`, `Smooth Transitions` — and derive the palette, type mood, and motion language from those keywords.
+   - **Dual moodboard:** Offer two concrete directions, Direction A (Bold & Cinematic — high-contrast type, large headlines, punchy visual energy) and Direction B (Minimal & Tech-Minimal — immersive micro-typography, subtle grids, refined dark-mode atmosphere). Require the client/user to pick a direction or specific reference shots BEFORE starting the layout.
+   - **Artifact:** record the chosen direction, keywords, and reference shots in the project's design doc (e.g. `docs/DESIGN.md` `## Design Direction`).
+
+7. **Only then generate code.**
 
 ### Human-Crafted Tooling Kit (use popular, production-grade libraries)
 
@@ -63,6 +69,10 @@ Never hand-roll polished primitives. Leverage proven libraries so the result loo
 - **Typography:** pick a deliberate pairing (e.g., display serif + clean sans, or a distinctive grotesque + mono accents). Use Google Fonts / Fontsource, variable fonts.
 - **Visual effects:** grain/noise overlays (SVG or CSS), gradient meshes, clip-path shapes, backdrop-blur, box-shadow layering, borders with alpha.
 - Use `next/font` or equivalent for self-hosted, performant fonts.
+- **Stack selection (award-level):** match the platform to project scale and client needs:
+  - **Client-managed CMS + custom motion** → Webflow + GSAP / custom JS (agency marketing sites where the client edits content).
+  - **Rapid interactive landing page** → Framer + React components (fast marketing pages with built-in interactive motion).
+  - **Heavy 3D / custom WebGL engine** → Next.js + Three.js / GSAP / Lenis (ultra-high-performance, award-level 3D/WebGL apps).
 
 ### Library-First Principle (Human-Written Over Self-Written) — MANDATORY
 
@@ -88,6 +98,7 @@ Aim: the visitor should feel craft and intent on first paint. Guidelines:
 - **Immersive extras:** canvas/WebGL effects, shaders, particle systems, interactive hero — only where they serve the story and stay performant.
 - **Dark/light interplay:** bold dark sections contrasted with light ones to control rhythm and focus.
 - **Restraint rule:** even at this level, drama must be purposeful. One dominant effect per viewport; never animate everything at once.
+- **Prototype before polishing code:** for scroll-driven animation, validate it as a motion prototype first — model section pin states, horizontal scroll triggers, and hover transitions — then export a short video walkthrough showing exact timing, easing, and spatial relationships for the developer to implement faithfully.
 
 ### Mode B — SaaS / Product (Google-Vercel-Stripe-Linear grade)
 

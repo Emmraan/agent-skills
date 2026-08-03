@@ -97,6 +97,7 @@ See [RESEARCH.md](references/RESEARCH.md) when planning research -- ready-to-use
 |---------|-----------------|---------|
 | **Landing page header** | Logo bar + rating | "Trusted by 10,000+ companies" with 5 recognizable logos |
 | **Pricing page** | Risk reversal | "30-day money-back guarantee, no questions asked" |
+| **Pricing page** | Interactive value calculator | Dynamic input calculator (tier, size, platform) that shows a live price instead of a static grid |
 | **Checkout flow** | Trust badges near forms | Security certification, payment logos, guarantee seal |
 
 **Copy patterns:**

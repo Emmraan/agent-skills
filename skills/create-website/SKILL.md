@@ -207,6 +207,7 @@ Done when `docs/CREATE-WEBSITE-PLAN.md` exists with every phase statused and the
 | markdown-for-agents | The site may be consumed by AI agents and token-efficient content matters | Extends docs/WEBSITE.md |
 | influence-psychology | Pricing or signup pages need persuasion-principle audits | Extends docs/WEBSITE.md |
 | high-perf-browser | Core Web Vitals or load speed threaten conversions | Extends docs/WEBSITE.md |
+| frontend-craft | The client wants award-level agency craft — run its MoodboardGate and motion-prototype handoff | Extends docs/DESIGN.md |
 | design-everyday-things | Forms or flows confuse users despite clean visuals | Extends docs/DESIGN.md |
 | microinteractions | The site needs interaction polish beyond static design | Extends docs/DESIGN.md |
 
