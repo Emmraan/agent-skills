@@ -1,6 +1,6 @@
 ---
 name: requirements-analysis
-description: A unified, end-to-end requirements analysis skill that guides the AI agent through stakeholder identification, requirement elicitation, classification and modeling, conflict resolution, prioritization, validation, traceability planning, and production of structured requirements specifications that serve as the foundation for product development and architectural decisions.
+description: A unified, end-to-end requirements analysis skill that guides the AI agent through stakeholder identification, requirement elicitation, classification and modeling, conflict resolution, prioritization, validation, traceability planning, and production of structured requirements specifications that serve as the foundation for product development and architectural decisions. When those requirements must be turned directly into a working, production-grade backend, compose this skill with backend-craft for the intent-first, library-first implementation.
 ---
 
 # Skills
@@ -23,6 +23,7 @@ Activate this skill when any of the following conditions are detected:
 - A user asks about requirements traceability, impact analysis, or change management for evolving product needs.
 - A user wants to validate whether a set of requirements is complete, consistent, feasible, and unambiguous.
 - A conversation involves terms such as "user story," "use case," "business requirement," "functional requirement," "non-functional requirement," "acceptance criteria," "MoSCoW," "INVEST," "jobs to be done," "requirement specification," "PRD," "BRD," "scope," "edge case," or similar requirements language.
+- The user wants requirements or a PRD translated directly into a working, production-grade backend (API/CRUD/service) — in these cases ALSO load `backend-craft` and run its intent-first, backend-type classification, and library-first implementation flow against the derived requirements.
 
 Do NOT activate this skill for pure system design or infrastructure questions with no requirements dimension (use product-architecture-design instead), code-level debugging or implementation tasks, or project scheduling and resource allocation questions with no product scope dimension.
 

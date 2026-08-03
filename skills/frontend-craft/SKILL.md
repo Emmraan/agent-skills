@@ -60,6 +60,19 @@ Never hand-roll polished primitives. Leverage proven libraries so the result loo
 - **Visual effects:** grain/noise overlays (SVG or CSS), gradient meshes, clip-path shapes, backdrop-blur, box-shadow layering, borders with alpha.
 - Use `next/font` or equivalent for self-hosted, performant fonts.
 
+### Library-First Principle (Human-Written Over Self-Written) — MANDATORY
+
+Leverage the ecosystem so the output is crafted, maintainable, and human-looking rather than naive from-scratch code:
+
+- **Use mature, maintained, human-written libraries for every standard concern** — icons, components, state, forms, validation, animation, smooth scroll, date/number formatting, toast, charts, code highlighting, image optimization. Do not reimplement what the ecosystem already solves.
+- **Write custom code ONLY when** no suitable library exists, or the need is genuinely project-unique business/interaction logic (brand-specific pattern, proprietary behavior).
+- **Decision gate per need:**
+  1. Mature, popular, maintained library exists? → **USE it** (name it and say why).
+  2. Library exists but is overkill → choose a smaller mainstream alternative first.
+  3. No library, or need is genuinely unique → write custom, typed, documented code and state *why* no library was used.
+- **Result:** the AI writes less code and leans more on proven human-written libraries, so the output is expected, production-grade, and looks genuinely hand-crafted.
+- State in the output contract which libraries were used per concern and where custom code was deliberately written.
+
 ### Mode A — Showcase / Portfolio (Awwwards-grade)
 
 Aim: the visitor should feel craft and intent on first paint. Guidelines:

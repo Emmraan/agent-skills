@@ -1,6 +1,6 @@
 ---
 name: api-design
-description: A unified, end-to-end API design skill that guides the AI agent through the complete lifecycle of API design — from understanding consumers and use cases through resource modeling, endpoint design, request/response shaping, error handling, authentication, versioning, documentation, and API governance. This skill serves as the agent's core decision framework for all API design tasks across REST, GraphQL, gRPC, async APIs, and internal service contracts.
+description: A unified, end-to-end API design skill that guides the AI agent through the complete lifecycle of API design — from understanding consumers and use cases through resource modeling, endpoint design, request/response shaping, error handling, authentication, versioning, documentation, and API governance. This skill serves as the agent's core decision framework for all API design tasks across REST, GraphQL, gRPC, async APIs, and internal service contracts. When the designed contract must be implemented as production-grade backend code, compose this skill with backend-craft for intent-first, library-first implementation.
 ---
 
 # Skills
@@ -29,6 +29,7 @@ Activate this skill when any of the following signals are present in the convers
 - The user asks about API lifecycle management, governance, or consistency standards across multiple APIs.
 - The conversation involves designing webhooks, event notifications, callback URLs, or any asynchronous API contract.
 - The user asks a narrow API question (e.g., "should this be a PUT or PATCH?") that requires API design principles to answer correctly.
+- The user wants the designed API to be IMPLEMENTED as working, production-grade code in a specific framework (Express, Fastify, NestJS, Next.js API, tRPC, etc.). In these cases ALSO load `backend-craft` and run its intent-first, backend-type classification, and library-first implementation flow against the contract designed here.
 
 Do NOT activate this skill for purely frontend rendering logic, UI component design, or infrastructure provisioning tasks that have no API design component.
 

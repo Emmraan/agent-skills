@@ -1,6 +1,6 @@
 ---
 name: backend-core
-description: A unified, end-to-end backend architecture skill that guides the AI agent through the complete lifecycle of backend system design — from understanding product requirements through service decomposition, API design, data modeling, infrastructure planning, scalability engineering, and architectural documentation. This skill serves as the agent's core decision framework for all backend-core architecture tasks.
+description: A unified, end-to-end backend architecture skill that guides the AI agent through the complete lifecycle of backend system design — from understanding product requirements through service decomposition, API design, data modeling, infrastructure planning, scalability engineering, and architectural documentation. This skill serves as the agent's core decision framework for all backend-core architecture tasks. When the user expects production-grade backend CODE to be implemented (Express, Fastify, NestJS, Next.js API, etc.), compose this skill with backend-craft for the intent-first, library-first implementation execution.
 ---
 
 # Skills
@@ -24,6 +24,7 @@ Activate this skill when any of the following signals are present in the convers
 - The user wants to document architecture decisions (ADRs), produce system design diagrams, or create technical specifications for engineering teams.
 - The conversation involves backend scalability discussions, capacity planning, load analysis, or growth-stage infrastructure evolution.
 - The user asks a question that, even if narrow in scope (e.g., "should I use Redis here?"), requires backend architecture context to answer correctly.
+- The user wants to BUILD or IMPLEMENT a backend — Express, Fastify, NestJS, Hono, Next.js API routes, Node.js services, or any framework — with production-grade code. In these cases ALSO load `backend-craft` and run its intent-first, backend-type classification, and library-first implementation flow after the architecture guidance here.
 
 Do NOT activate this skill for purely frontend, mobile UI, or product management tasks that have no backend system design component.
 
