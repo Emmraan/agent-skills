@@ -1,236 +1,261 @@
 ---
 name: react-three-fiber
-description: Build declarative 3D scenes with React Three Fiber (R3F) - a React renderer for Three.js. Use when building interactive 3D experiences in React applications with component-based architecture, state management, and reusable abstractions. Ideal for product configurators, portfolios, games, data visualization, and immersive web experiences.
+description: React Three Fiber (R3F) and Poimandres ecosystem best practices. Use when writing, reviewing, or optimizing R3F code. Triggers on tasks involving @react-three/fiber, @react-three/drei, zustand, @react-three/postprocessing, @react-three/rapier, or leva.
 license: MIT
 metadata:
-  author: freshtechbro
-  version: 1.0.0
+  author: three-agent-skills
+  version: "1.1.0"
 ---
 
-# React Three Fiber
+# React Three Fiber Best Practices
 
-## Overview
+Comprehensive guide for React Three Fiber and the Poimandres ecosystem. Contains 70+ rules across 12 categories, prioritized by impact.
 
-React Three Fiber (R3F) is a React renderer for Three.js that brings declarative, component-based 3D development to React applications. Instead of imperatively creating and managing Three.js objects, you build 3D scenes using JSX components that map directly to Three.js objects.
+## Sources & Credits
 
-**When to Use This Skill**:
-- Building 3D experiences within React applications
-- Creating interactive product configurators or showcases
-- Developing 3D portfolios, galleries, or storytelling experiences
-- Building games or simulations in React
-- Adding 3D elements to existing React projects
-- When you need state management and React hooks with 3D graphics
-- When working with React frameworks (Next.js, Gatsby, Remix)
+> Additional tips from [100 Three.js Tips](https://www.utsubo.com/blog/threejs-best-practices-100-tips) by [Utsubo](https://www.utsubo.com)
 
-**Key Benefits**:
-- **Declarative**: Write 3D scenes like React components
-- **React Integration**: Full access to hooks, context, state management
-- **Reusability**: Create and share 3D component libraries
-- **Performance**: Automatic render optimization and reconciliation
-- **Ecosystem**: Works with Drei helpers, Zustand, Framer Motion, etc.
-- **TypeScript Support**: Full type safety for Three.js objects
+## When to Apply
 
----
+Reference these guidelines when:
+- Writing new R3F components
+- Optimizing R3F performance (re-renders are the #1 issue)
+- Using Drei helpers correctly
+- Managing state with Zustand
+- Implementing post-processing or physics
 
-## Core Concepts
+## Ecosystem Coverage
 
-### 1. Canvas Component
+- **@react-three/fiber** - React renderer for Three.js
+- **@react-three/drei** - Useful helpers and abstractions
+- **@react-three/postprocessing** - Post-processing effects
+- **@react-three/rapier** - Physics engine
+- **zustand** - State management
+- **leva** - Debug GUI
 
-The `<Canvas>` component sets up a Three.js scene, camera, renderer, and render loop.
+## Rule Categories by Priority
+
+| Priority | Category | Impact | Prefix |
+|----------|----------|--------|--------|
+| 1 | Performance & Re-renders | CRITICAL | `perf-` |
+| 2 | useFrame & Animation | CRITICAL | `frame-` |
+| 3 | Component Patterns | HIGH | `component-` |
+| 4 | Canvas & Setup | HIGH | `canvas-` |
+| 5 | Drei Helpers | MEDIUM-HIGH | `drei-` |
+| 6 | Loading & Suspense | MEDIUM-HIGH | `loading-` |
+| 7 | State Management | MEDIUM | `state-` |
+| 8 | Events & Interaction | MEDIUM | `events-` |
+| 9 | Post-processing | MEDIUM | `postpro-` |
+| 10 | Physics (Rapier) | LOW-MEDIUM | `physics-` |
+| 11 | Leva (Debug GUI) | LOW | `leva-` |
+
+## Quick Reference
+
+### 1. Performance & Re-renders (CRITICAL)
+
+- `perf-never-set-state-in-useframe` - NEVER call setState in useFrame
+- `perf-isolate-state` - Isolate components that need React state
+- `perf-zustand-selectors` - Use Zustand selectors, not entire store
+- `perf-transient-subscriptions` - Use transient subscriptions for continuous values
+- `perf-memo-components` - Memoize expensive components
+- `perf-keys-for-lists` - Use stable keys for dynamic lists
+- `perf-avoid-inline-objects` - Avoid creating objects/arrays in JSX
+- `perf-dispose-auto` - Understand R3F auto-dispose behavior
+- `perf-visibility-toggle` - Toggle visibility instead of remounting
+- `perf-r3f-perf` - Use r3f-perf for performance monitoring
+
+### 2. useFrame & Animation (CRITICAL)
+
+- `frame-priority` - Use priority for execution order
+- `frame-delta-time` - Always use delta for animations
+- `frame-conditional-subscription` - Disable useFrame when not needed
+- `frame-destructure-state` - Destructure only what you need
+- `frame-render-on-demand` - Use invalidate() for on-demand rendering
+- `frame-avoid-heavy-computation` - Move heavy work outside useFrame
+
+### 3. Component Patterns (HIGH)
+
+- `component-jsx-elements` - Use JSX for Three.js objects
+- `component-attach-prop` - Use attach for non-standard properties
+- `component-primitive` - Use primitive for existing objects
+- `component-extend` - Use extend() for custom classes
+- `component-forwardref` - Use forwardRef for reusable components
+- `component-dispose-null` - Set dispose={null} on shared resources
+
+### 4. Canvas & Setup (HIGH)
+
+- `canvas-size-container` - Canvas fills parent container
+- `canvas-camera-default` - Configure camera via prop
+- `canvas-gl-config` - Configure WebGL context
+- `canvas-shadows` - Enable shadows at Canvas level
+- `canvas-frameloop` - Choose appropriate frameloop mode
+- `canvas-events` - Configure event handling
+- `canvas-linear-flat` - Use linear/flat for correct colors
+
+### 5. Drei Helpers (MEDIUM-HIGH)
+
+- `drei-use-gltf` - useGLTF with preloading
+- `drei-use-texture` - useTexture for texture loading
+- `drei-environment` - Environment for realistic lighting
+- `drei-orbit-controls` - OrbitControls from Drei
+- `drei-html` - Html for DOM overlays
+- `drei-text` - Text for 3D text
+- `drei-instances` - Instances for optimized instancing
+- `drei-use-helper` - useHelper for debug visualization
+- `drei-bounds` - Bounds to fit camera
+- `drei-center` - Center to center objects
+- `drei-float` - Float for floating animation
+
+### 6. Loading & Suspense (MEDIUM-HIGH)
+
+- `loading-suspense` - Wrap async components in Suspense
+- `loading-preload` - Preload assets with useGLTF.preload
+- `loading-use-progress` - useProgress for loading UI
+- `loading-lazy-components` - Lazy load heavy components
+- `loading-error-boundary` - Handle loading errors
+
+### 7. State Management (MEDIUM)
+
+- `state-zustand-store` - Create focused Zustand stores
+- `state-avoid-objects-in-store` - Be careful with Three.js objects
+- `state-subscribeWithSelector` - Fine-grained subscriptions
+- `state-persist` - Persist state when needed
+- `state-separate-concerns` - Separate stores by concern
+
+### 8. Events & Interaction (MEDIUM)
+
+- `events-pointer-events` - Use pointer events on meshes
+- `events-stop-propagation` - Prevent event bubbling
+- `events-cursor-pointer` - Change cursor on hover
+- `events-raycast-filter` - Filter raycasting
+- `events-event-data` - Understand event data structure
+
+### 9. Post-processing (MEDIUM)
+
+- `postpro-effect-composer` - Use EffectComposer
+- `postpro-common-effects` - Common effects reference
+- `postpro-selective-bloom` - SelectiveBloom for optimized glow
+- `postpro-custom-shader` - Create custom effects
+- `postpro-performance` - Optimize post-processing
+
+### 10. Physics Rapier (LOW-MEDIUM)
+
+- `physics-setup` - Basic Rapier setup
+- `physics-body-types` - dynamic, fixed, kinematic
+- `physics-colliders` - Choose appropriate colliders
+- `physics-events` - Handle collision events
+- `physics-api-ref` - Use ref for physics API
+- `physics-performance` - Optimize physics
+
+### 11. Leva (LOW)
+
+- `leva-basic` - Basic Leva usage
+- `leva-folders` - Organize with folders
+- `leva-conditional` - Hide in production
+
+## How to Use
+
+Read individual rule files for detailed explanations and code examples:
+
+```
+rules/perf-never-set-state-in-useframe.md
+rules/drei-use-gltf.md
+rules/perf-zustand-selectors.md
+```
+
+## Full Compiled Document
+
+For the complete guide with all rules expanded: `references/R3F_BEST_PRACTICES.md`
+
+## Critical Patterns
+
+### NEVER setState in useFrame
 
 ```jsx
-import { Canvas } from '@react-three/fiber'
+// BAD - 60 re-renders per second!
+function BadComponent() {
+  const [position, setPosition] = useState(0);
+  useFrame(() => {
+    setPosition(p => p + 0.01); // NEVER DO THIS
+  });
+  return <mesh position-x={position} />;
+}
 
-function App() {
-  return (
-    <Canvas
-      camera={{ position: [0, 0, 5], fov: 75 }}
-      gl={{ antialias: true }}
-      dpr={[1, 2]}
-    >
-      {/* 3D content goes here */}
-    </Canvas>
-  )
+// GOOD - Mutate refs directly
+function GoodComponent() {
+  const meshRef = useRef();
+  useFrame(() => {
+    meshRef.current.position.x += 0.01;
+  });
+  return <mesh ref={meshRef} />;
 }
 ```
 
-**Canvas Props**:
-- `camera` - Camera configuration (position, fov, near, far)
-- `gl` - WebGL renderer settings
-- `dpr` - Device pixel ratio (default: [1, 2])
-- `shadows` - Enable shadow mapping (default: false)
-- `frameloop` - "always" (default), "demand", or "never"
-- `flat` - Disable color management for simpler colors
-- `linear` - Use linear color space instead of sRGB
-
-### 2. Declarative 3D Objects
-
-Three.js objects are created using JSX with kebab-case props:
+### Zustand Selectors
 
 ```jsx
-// THREE.Mesh + THREE.BoxGeometry + THREE.MeshStandardMaterial
-<mesh position={[0, 0, 0]} rotation={[0, Math.PI / 4, 0]}>
-  <boxGeometry args={[1, 1, 1]} />
-  <meshStandardMaterial color="hotpink" />
-</mesh>
+// BAD - Re-renders on ANY store change
+const store = useGameStore();
+
+// GOOD - Only re-renders when playerX changes
+const playerX = useGameStore(state => state.playerX);
+
+// BETTER - No re-renders, direct mutation
+useFrame(() => {
+  const { value } = useStore.getState();
+  ref.current.position.x = value;
+});
 ```
 
-**Prop Mapping**:
-- `position` → `object.position.set(x, y, z)`
-- `rotation` → `object.rotation.set(x, y, z)`
-- `scale` → `object.scale.set(x, y, z)`
-- `args` → Constructor arguments for geometry/material
-- `attach` → Attach to parent property (e.g., `attach="material"`)
-
-**Shorthand Notation**:
-```jsx
-// Full notation
-<mesh position={[1, 2, 3]} />
-
-// Axis-specific (dash notation)
-<mesh position-x={1} position-y={2} position-z={3} />
-```
-
-### 3. useFrame Hook
-
-Execute code on every frame (animation loop):
+### Drei useGLTF
 
 ```jsx
-import { useFrame } from '@react-three/fiber'
-import { useRef } from 'react'
-
-function RotatingBox() {
-  const meshRef = useRef()
-
-  useFrame((state, delta) => {
-    // Rotate mesh on every frame
-    meshRef.current.rotation.x += delta
-    meshRef.current.rotation.y += delta * 0.5
-
-    // Access scene state
-    const time = state.clock.elapsedTime
-    meshRef.current.position.y = Math.sin(time) * 2
-  })
-
-  return (
-    <mesh ref={meshRef}>
-      <boxGeometry />
-      <meshStandardMaterial color="orange" />
-    </mesh>
-  )
-}
-```
-
-**useFrame Parameters**:
-- `state` - Scene state (camera, scene, gl, clock, etc.)
-- `delta` - Time since last frame (for frame-rate independence)
-- `xrFrame` - XR frame data (for VR/AR)
-
-**Important**: Never use `setState` inside `useFrame` - it causes unnecessary re-renders!
-
-### 4. useThree Hook
-
-Access scene state and methods:
-
-```jsx
-import { useThree } from '@react-three/fiber'
-
-function CameraInfo() {
-  const { camera, gl, scene, size, viewport } = useThree()
-
-  // Selective subscription (only re-render on size change)
-  const size = useThree((state) => state.size)
-
-  // Get state non-reactively
-  const get = useThree((state) => state.get)
-  const freshState = get() // Latest state without triggering re-render
-
-  return null
-}
-```
-
-**Available State**:
-- `camera` - Default camera
-- `scene` - Three.js scene
-- `gl` - WebGL renderer
-- `size` - Canvas dimensions
-- `viewport` - Viewport dimensions in 3D units
-- `clock` - Three.js clock
-- `pointer` - Normalized mouse coordinates
-- `invalidate()` - Manually trigger render
-- `setSize()` - Manually resize canvas
-
-### 5. useLoader Hook
-
-Load assets with automatic caching and Suspense integration:
-
-```jsx
-import { Suspense } from 'react'
-import { useLoader } from '@react-three/fiber'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { TextureLoader } from 'three'
+import { useGLTF } from '@react-three/drei';
 
 function Model() {
-  const gltf = useLoader(GLTFLoader, '/model.glb')
-  return <primitive object={gltf.scene} />
+  const { scene } = useGLTF('/model.glb');
+  return <primitive object={scene} />;
 }
 
-function TexturedMesh() {
-  const texture = useLoader(TextureLoader, '/texture.jpg')
+// Preload for instant loading
+useGLTF.preload('/model.glb');
+```
+
+### Suspense Loading
+
+```jsx
+function App() {
   return (
-    <mesh>
-      <boxGeometry />
-      <meshStandardMaterial map={texture} />
-    </mesh>
-  )
+    <Canvas>
+      <Suspense fallback={<Loader />}>
+        <Model />
+      </Suspense>
+    </Canvas>
+  );
 }
+```
+
+### r3f-perf Monitoring
+
+```jsx
+import { Perf } from 'r3f-perf';
 
 function App() {
   return (
     <Canvas>
-      <Suspense fallback={<LoadingIndicator />}>
-        <Model />
-        <TexturedMesh />
-      </Suspense>
+      <Perf position="top-left" />
+      <Scene />
     </Canvas>
-  )
+  );
 }
 ```
 
-**Loading Multiple Assets**:
+### Toggle Visibility (Not Remounting)
+
 ```jsx
-const [texture1, texture2, texture3] = useLoader(TextureLoader, [
-  '/tex1.jpg',
-  '/tex2.jpg',
-  '/tex3.jpg'
-])
+// BAD: Remounting destroys and recreates
+{showModel && <Model />}
+
+// GOOD: Toggle visibility, keeps instance alive
+<Model visible={showModel} />
 ```
-
-**Loader Extensions**:
-```jsx
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
-
-useLoader(GLTFLoader, '/model.glb', (loader) => {
-  const dracoLoader = new DRACOLoader()
-  dracoLoader.setDecoderPath('/draco/')
-  loader.setDRACOLoader(dracoLoader)
-})
-```
-
-**Pre-loading**:
-```jsx
-// Pre-load assets before component mounts
-useLoader.preload(GLTFLoader, '/model.glb')
-```
-
----
-
-## Patterns & Reference
-
-The full common patterns, integration recipes, performance guidance, and pitfall fixes for this library live in [references/patterns.md](references/patterns.md). Read the section relevant to the current task instead of the whole file; each section is self-contained with runnable examples.
-
-## Resources
-
-- scripts/ - automation and generator utilities for this library.
-- references/ - API reference and pattern docs (see patterns.md for the moved patterns sections).
-- assets/ - starter templates and examples.
