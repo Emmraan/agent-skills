@@ -7,6 +7,15 @@ description: A unified, end-to-end frontend performance engineering skill that g
 
 This skill serves as the AI agent's comprehensive framework for diagnosing, analyzing, and resolving any frontend performance challenge — from initial audit through root cause analysis, optimization implementation, and continuous monitoring. The agent should approach performance work empirically: measure first, hypothesize, implement targeted fixes, and verify with data. Every recommendation must be tied to a measurable metric and prioritized by user impact. The agent must resist premature optimization and instead focus effort where measured data indicates the highest return.
 
+### Non-Negotiable Lighthouse Default (Apply to every build, every page, every delivered UI)
+
+The agent's default performance target is a **Lighthouse score of 95/100 or higher in EVERY category — Performance, Accessibility, Best Practices, and SEO** — for every page or interface it produces, alongside smooth, fluid interactions. "Good" Core Web Vitals alone is not enough; the floor is a 95-grade page. This default applies to showcase, marketing, and SaaS UI alike.
+
+- **Always verify.** After generating or refactoring any frontend, run Lighthouse (or Lighthouse CI) against each delivered page, record all four category scores, and include them in the output. Do not claim completion without the measurement.
+- **Green means ship.** A page is only "done" when Performance, Accessibility, Best Practices, and SEO each report ≥ 95/100 and all Core Web Vitals pass at the stricter 95-grade thresholds defined in Step 4 below.
+- **Optimize until 95.** If any category or Core Web Vital falls below the 95-grade line, apply the relevant optimization steps in this skill (Steps 6–8 for LCP/INP/CLS, Steps 15–20 for assets and rendering, Step 23 for budgets) and re-measure until it passes.
+- **Stay smooth.** Also confirm `prefers-reduced-motion` is honored and animations only use GPU-friendly properties (`transform`/`opacity`) from Step 27, so the UI is not only 95+ in lab tests but also jank-free in real usage.
+
 ## When to use
 
 Activate this skill when any of the following conditions are detected:
@@ -99,22 +108,25 @@ Do NOT activate this skill for backend performance or database optimization ques
 
 4. **Define performance targets and budgets.** Establish measurable goals. If the user has not defined targets, propose targets based on these thresholds:
 
-   **Core Web Vitals targets (aligned with Google's "Good" thresholds):**
-   | Metric | Good | Needs Improvement | Poor |
-   |--------|------|-------------------|------|
-   | **LCP** | ≤ 2.5s | 2.5s – 4.0s | > 4.0s |
-   | **INP** | ≤ 200ms | 200ms – 500ms | > 500ms |
-   | **CLS** | ≤ 0.1 | 0.1 – 0.25 | > 0.25 |
-   | **TTFB** | ≤ 800ms | 800ms – 1800ms | > 1800ms |
-   | **FCP** | ≤ 1.8s | 1.8s – 3.0s | > 3.0s |
+   **Core Web Vitals targets — 95-grade (default for all delivered UI, stricter than "Good"):**
+   | Metric | 95-Grade Target | Good (min) |
+   |--------|-----------------|------------|
+   | **LCP** | ≤ 2.0s | ≤ 2.5s |
+   | **INP** | ≤ 150ms | ≤ 200ms |
+   | **CLS** | ≤ 0.05 | ≤ 0.1 |
+   | **TTFB** | ≤ 600ms | ≤ 800ms |
+   | **FCP** | ≤ 1.2s | ≤ 1.8s |
+   | **TBT** | ≤ 150ms | ≤ 200ms |
 
-   **Bundle size budgets (per route, gzipped):**
+   These stricter budgets are the default so Lighthouse Performance lands at ≥ 95/100. Only relax for documented infrastructure constraints.
+
+   **Bundle size budgets (per route, gzipped) — 95-grade default:**
    | Page Type | JS Budget | CSS Budget | Total Budget |
    |-----------|-----------|------------|-------------|
-   | Landing / marketing page | < 100KB | < 30KB | < 200KB |
-   | App shell (authenticated) | < 200KB | < 50KB | < 350KB |
-   | Feature page within app | < 150KB (incremental) | < 30KB (incremental) | < 250KB (incremental) |
-   | Data-heavy dashboard | < 300KB | < 50KB | < 500KB |
+   | Landing / marketing page | < 60KB | < 20KB | < 120KB |
+   | App shell (authenticated) | < 140KB | < 40KB | < 250KB |
+   | Feature page within app | < 100KB (incremental) | < 20KB (incremental) | < 180KB (incremental) |
+   | Data-heavy dashboard | < 250KB | < 40KB | < 400KB |
 
    **Interaction responsiveness budget:**
    | Interaction Type | Target Response Time |
@@ -826,13 +838,15 @@ Do NOT activate this skill for backend performance or database optimization ques
         },
         "assert": {
           "assertions": {
-            "categories:performance": ["error", { "minScore": 0.9 }],
+            "categories:performance": ["error", { "minScore": 0.95 }],
             "categories:accessibility": ["error", { "minScore": 0.95 }],
-            "first-contentful-paint": ["error", { "maxNumericValue": 1800 }],
-            "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
-            "total-blocking-time": ["error", { "maxNumericValue": 200 }],
-            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
-            "interactive": ["error", { "maxNumericValue": 3800 }]
+            "categories:best-practices": ["error", { "minScore": 0.95 }],
+            "categories:seo": ["error", { "minScore": 0.95 }],
+            "first-contentful-paint": ["error", { "maxNumericValue": 1200 }],
+            "largest-contentful-paint": ["error", { "maxNumericValue": 2000 }],
+            "total-blocking-time": ["error", { "maxNumericValue": 150 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.05 }],
+            "interactive": ["error", { "maxNumericValue": 3000 }]
           }
         },
         "upload": {
@@ -1140,6 +1154,8 @@ Do NOT activate this skill for backend performance or database optimization ques
     - **Code review for performance** (user presents code with performance concerns): Map the code against the relevant optimization patterns (Steps 15–20, 25–28) and provide specific refactoring recommendations with before/after code.
 
     Always state which depth level you are operating at and why.
+
+    **New build / delivered UI (default depth):** Whenever the agent generates or refactors any frontend (showcase, marketing, or SaaS), it must self-verify against the Non-Negotiable Lighthouse Default in the instructions: run Lighthouse (or Lighthouse CI) on each delivered page, confirm Performance, Accessibility, Best Practices, and SEO each score ≥ 95/100 at the stricter 95-grade thresholds, apply Steps 6–8 / 14–20 / 23 for any shortfall, re-measure, and report the four category scores plus Core Web Vitals in the output as proof the UI is consistently smooth and 95+.
 
 31. **Maintain an empirical, iterative approach.** Performance optimization is a cycle: measure → hypothesize → optimize → verify. After delivering the initial analysis:
     - Never recommend optimizations without measured evidence of a problem. Premature optimization adds complexity without proven benefit.

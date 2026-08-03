@@ -1,6 +1,6 @@
 ---
 name: frontend-core
-description: A unified, end-to-end frontend engineering skill that guides the AI agent through frontend architecture design, component modeling, state management, styling strategies, API integration, performance optimization, accessibility, testing, build tooling, and the production of maintainable, scalable, and resilient client-side applications following modern best practices.
+description: A unified, end-to-end frontend engineering skill that guides the AI agent through frontend architecture design, component modeling, state management, styling strategies, API integration, performance optimization, accessibility, testing, build tooling, and the production of maintainable, scalable, and resilient client-side applications following modern best practices. When UI visual craft / aesthetic polish / landing / showcase design is the ask, compose this skill with frontend-craft for intent-first, human-crafted UI execution.
 ---
 
 # Skills
@@ -27,6 +27,7 @@ Activate this skill when any of the following conditions are detected:
 - A user asks about design systems, component libraries, or shared UI infrastructure.
 - A user asks about error handling, error boundaries, fallback UIs, or frontend resilience patterns.
 - A user presents existing frontend code or architecture and asks for a review, critique, or refactoring guidance.
+- A user asks to build or restyle a landing page, showcase, portfolio, marketing site, hero section, or any UI where visual craft, aesthetic polish, animations, or "not looking AI-generated" is a priority — in these cases ALSO load `frontend-craft` and complete its intent-first analysis before applying the engineering guidance here.
 - A conversation involves terms such as "component," "React," "Vue," "Angular," "Svelte," "Next.js," "Nuxt," "SvelteKit," "Astro," "SPA," "SSR," "SSG," "hydration," "virtual DOM," "signals," "hooks," "state management," "CSS," "Tailwind," "Webpack," "Vite," "Turbopack," "tree shaking," "code splitting," "lazy loading," "Core Web Vitals," "LCP," "CLS," "INP," "accessibility," "ARIA," "responsive," "breakpoint," "design tokens," or similar frontend language.
 
 Do NOT activate this skill for backend-only architecture questions with no frontend dimension (use product-architecture-design instead), pure requirements elicitation with no frontend implementation context (use requirements-analysis instead), or mobile-native development (Swift, Kotlin, Flutter, React Native) unless the question explicitly involves shared web/hybrid concerns.
