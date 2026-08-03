@@ -204,6 +204,7 @@ Done when `docs/CREATE-WEBSITE-PLAN.md` exists with every phase statused and the
 | Skill | Add when | Artifact |
 |---|---|---|
 | obviously-awesome | `docs/POSITIONING.md` does not exist yet and the messaging has nothing to stand on | Creates docs/POSITIONING.md |
+| markdown-for-agents | The site may be consumed by AI agents and token-efficient content matters | Extends docs/WEBSITE.md |
 | influence-psychology | Pricing or signup pages need persuasion-principle audits | Extends docs/WEBSITE.md |
 | high-perf-browser | Core Web Vitals or load speed threaten conversions | Extends docs/WEBSITE.md |
 | design-everyday-things | Forms or flows confuse users despite clean visuals | Extends docs/DESIGN.md |
