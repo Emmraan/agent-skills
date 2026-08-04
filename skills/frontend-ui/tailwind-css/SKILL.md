@@ -10,7 +10,7 @@ metadata:
   triggers:
     - tailwind
     - tailwindcss
-    - @theme
+    - "@theme"
     - utility classes
     - dark mode
     - responsive design
