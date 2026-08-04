@@ -1,6 +1,6 @@
 # Agent Skills
 
-This repository collects well-structured `SKILL.md` documents that define capability modules ("SKILL") for AI agents, for example: version control, security, monitoring, frontend engineering, and more. It currently holds 130+ skills, including both curated third-party skills (e.g. `create-website`, `high-perf-browser`) and skills authored by Emmraan (e.g. `seo`, `cloud`, `markdown-for-agents`).
+This repository collects well-structured `SKILL.md` documents that define capability modules ("SKILL") for AI agents, for example: version control, security, monitoring, frontend engineering, and more. It currently holds 140+ skills, including both curated third-party skills (e.g. `create-website`, `high-perf-browser`, the addyosmani engineering-workflow set), skills authored by Emmraan (e.g. `seo`, `cloud`, `markdown-for-agents`), and more.
 
 Each skill folder contains a `SKILL.md` file that documents the skill's purpose, activation signals, behavior, and usage guidance for an AI agent.
 
