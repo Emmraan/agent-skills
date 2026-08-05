@@ -1,6 +1,6 @@
 # Skills by Category
 
-Install every skill in a category with a single command. See [README.md](README.md) for an overview.
+Install every skill in a category with a single command. See [README.md](README.md) for an overview. New to the repo? Use the auto-install master prompt or the project-type guide in [SKILLS_INSTALLATION_GUIDE.md](SKILLS_INSTALLATION_GUIDE.md).
 
 Frontend & UI
 

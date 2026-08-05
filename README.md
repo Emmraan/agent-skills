@@ -1,6 +1,6 @@
 # Agent Skills
 
-This repository collects well-structured `SKILL.md` documents that define capability modules ("SKILL") for AI agents, for example: version control, security, monitoring, frontend engineering, and more. It currently holds 140+ skills, including both curated third-party skills (e.g. `create-website`, `high-perf-browser`, the addyosmani engineering-workflow set), skills authored by Emmraan (e.g. `seo`, `cloud`, `markdown-for-agents`), and more.
+This repository collects well-structured `SKILL.md` documents that define capability modules ("SKILL") for AI agents, for example: version control, security, monitoring, frontend engineering, and more. It currently holds 160+ skills, including both curated third-party skills (e.g. `create-website`, `high-perf-browser`, the addyosmani engineering-workflow set), skills authored by Emmraan (e.g. `seo`, `cloud`, `markdown-for-agents`), and more.
 
 Each skill folder contains a `SKILL.md` file that documents the skill's purpose, activation signals, behavior, and usage guidance for an AI agent.
 
@@ -22,6 +22,7 @@ Skills by category
 - Install every skill in a category with a single command: `npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/<category>` (the CLI resolves a category folder as a source and installs all skills under it).
 - To install the whole collection, or browse and pick skills individually, run: `npx skills add https://github.com/Emmraan/agent-skills`
 - See [SKILLS_CATEGORIES.md](SKILLS_CATEGORIES.md) for the install command of every category.
+- New to the repo? See [SKILLS_INSTALLATION_GUIDE.md](SKILLS_INSTALLATION_GUIDE.md) for an auto-install master prompt and a manual project-type guide that installs only the skills you need.
 
 Frontend & UI
 
