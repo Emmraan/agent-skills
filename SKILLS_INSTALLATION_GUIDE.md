@@ -83,8 +83,8 @@ DETECTION REFERENCE (project signal → project type → pack):
 | `incremental-implementation` | Builds in thin slices with test-verify-commit discipline (BUILD phase). |
 | `testing` | End-to-end test engineering strategy (VERIFY phase). |
 | `test-master` | Test file generation, mocking, coverage analysis (VERIFY phase). |
-| `code-reviewer` | Five-axis review before merge (REVIEW phase). |
-| `code-simplification` | Reduces unnecessary complexity while preserving behavior (REVIEW phase). |
+| `code-reviewer` | Five-axis review before merge (REVIEW phase). Enforces the human-code bar — flags AI-tell patterns and *what*-comments. |
+| `code-simplification` | Reduces unnecessary complexity while preserving behavior (REVIEW phase). Removes redundant comments and AI-tell noise. |
 | `version-control` | Branching, atomic commits, release versioning (SHIP phase). |
 
 ---

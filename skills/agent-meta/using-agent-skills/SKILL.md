@@ -1,6 +1,6 @@
 ---
 name: using-agent-skills
-description: Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked.
+description: Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. Also use when the user is vibe coding — giving a loose prompt like "just build it", "make it work", or "get this done" — so the task is classified into the right lifecycle phase instead of being coded carelessly. This is the meta-skill that governs how all other skills are discovered and invoked.
 ---
 
 # Using Agent Skills
@@ -111,6 +111,18 @@ Your job is surgical precision, not unsolicited renovation.
 Every skill includes a verification step. A task is not complete until verification passes. "Seems right" is never sufficient — there must be evidence (passing tests, build output, runtime data).
 
 Per-skill verification is the local check. The project-wide bar that applies to *every* change, regardless of which skill is active, is the Definition of Done: tests pass, no regressions, behavior verified at runtime, docs updated. See `references/definition-of-done.md`. It complements each task's acceptance criteria rather than replacing them.
+
+### 7. Write Code a Human Wrote
+
+Production code reads like a senior engineer wrote it, not like a template filled in by an AI. Apply this bar to every line you write, especially during vibe coding when there's pressure to just "make it work":
+
+- **Comments explain *why*, never *what*.** Do not restate what the code does (`// increments the counter`). Comment only non-obvious decisions, constraints, or intent a reader cannot see from the code itself.
+- **No commented-out code.** Dead blocks, debug lines, and boilerplate/generated header comments are shipped only by accident. Remove them before you finish.
+- **No AI-tell patterns.** Avoid generic names (`data`, `processData`, `handleClick`, `item`), redundant docstrings, needless abstraction, verbose comments on obvious code, and the same scaffold in every file.
+- **Write for the next reader.** Small functions, real domain names, obvious over clever, follow project conventions, reuse mature libraries instead of reinventing them (see `frontend-craft`/`backend-craft` Library-First principle).
+- If you catch yourself adding an explanatory comment, first improve the name or structure instead — code that needs a "what" comment is code that isn't self-explanatory yet.
+
+The checkable bar lives in the Definition of Done's Quality section; `code-reviewer` audits it, `code-simplification` removes what violates it.
 
 ## Failure Modes to Avoid
 

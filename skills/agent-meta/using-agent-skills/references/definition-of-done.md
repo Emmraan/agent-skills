@@ -27,6 +27,9 @@ Apply this to every change before declaring it done.
 
 ### Quality
 - [ ] Code reveals intent through naming and structure; no comments needed to explain *what* it does
+- [ ] Comments explain *why* only, never *what* — no comments restating obvious code
+- [ ] No commented-out code blocks, debug output, or boilerplate/generated header comments left behind
+- [ ] No AI-tell patterns: generic names (`data`, `processData`, `handleClick`), redundant docstrings, needless abstraction, verbose comments on obvious code
 - [ ] No duplicated business logic
 - [ ] No dead code, debug output, or commented-out blocks left behind
 - [ ] Changes are scoped to the task; no unrelated refactors snuck in

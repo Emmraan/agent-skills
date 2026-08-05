@@ -118,7 +118,8 @@ Budget per loop: <e.g. 3 iterations, or 30 tool calls, or a time limit>
 1. Implement one slice following `incremental-implementation`.
 2. Load the domain skills for the work (e.g. `frontend-craft`, `backend-craft`, `api-design`, or the language/library skill that matches).
 3. Ground framework decisions in official docs with `source-driven-development`.
-4. Commit progress (`version-control`) so the system stays in a working state.
+4. Write code a human wrote — comments explain *why* only, no commented-out blocks, no AI-tell patterns (generic names, redundant docstrings). The checkable bar is the Definition of Done Quality section.
+5. Commit progress (`version-control`) so the system stays in a working state.
 
 **Exit condition (deterministic):** every planned slice is implemented and its acceptance criterion passes, OR the iteration budget is exhausted.
 **Budget:** if the same slice fails twice, STOP. Do not silently retry a third time — report the failure and the two attempted fixes.

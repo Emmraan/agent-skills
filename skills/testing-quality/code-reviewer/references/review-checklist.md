@@ -10,6 +10,8 @@
 | **Performance** | N+1 queries? Memory leaks? Caching needed? |
 | **Tests** | Adequate coverage? Edge cases tested? Mocks appropriate? |
 | **Naming** | Clear, consistent, intention-revealing? |
+| **Comments** | Only explain *why*, never *what*? No commented-out code? |
+| **AI-tell patterns** | Generic names (`data`, `processData`, `handleClick`)? Redundant docstrings? Needless abstraction? Same scaffold in every file? |
 | **Error Handling** | Errors caught? Meaningful messages? Logged? |
 | **Documentation** | Public APIs documented? Complex logic explained? |
 
@@ -34,6 +36,8 @@
 - [ ] Look for security issues
 - [ ] Check performance concerns
 - [ ] Review naming clarity
+- [ ] Check comments explain *why* only — flag any that restate the obvious
+- [ ] Flag commented-out code, debug output, and AI-tell patterns (generic names, redundant docstrings)
 
 ### 4. Tests (10 min)
 - [ ] Verify test coverage

@@ -19,6 +19,7 @@ Simplify code by reducing complexity while preserving exact behavior. The goal i
 - When refactoring code written under time pressure
 - When consolidating related logic scattered across files
 - After merging changes that introduced duplication or inconsistency
+- When the code carries AI-tell patterns: redundant comments explaining *what* the code does, generic names (`data`, `processData`, `handleClick`), verbose docstrings, or boilerplate blocks that add noise without meaning
 
 **When NOT to use:**
 
