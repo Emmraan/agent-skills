@@ -87,6 +87,7 @@ DETECTION REFERENCE (project signal → project type → pack):
 | `code-simplification` | Reduces unnecessary complexity while preserving behavior (REVIEW phase). Removes redundant comments and AI-tell noise. |
 | `version-control` | Branching, atomic commits, release versioning (SHIP phase). |
 | `sdlc-workflow` | The industry-standard feature pipeline: issue → branch → develop → test → commit → PR → review → CI → merge → staging → QA → production → monitor. Makes the agent build features the way a real company does. |
+| `forward-deployed-engineer` | The embedded-customer operating model: orient in an unfamiliar codebase before coding, extract real requirements conversationally, build in-place matching the repo's conventions, respect the customer's SDLC gates, and hand over maintainable code. |
 
 ---
 
@@ -105,6 +106,7 @@ npx skills add https://github.com/Emmraan/agent-skills --skill code-reviewer
 npx skills add https://github.com/Emmraan/agent-skills --skill code-simplification
 npx skills add https://github.com/Emmraan/agent-skills --skill version-control
 npx skills add https://github.com/Emmraan/agent-skills --skill sdlc-workflow
+npx skills add https://github.com/Emmraan/agent-skills --skill forward-deployed-engineer
 ```
 
 ## B.2 Project-Type Packs
