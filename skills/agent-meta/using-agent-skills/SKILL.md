@@ -114,15 +114,16 @@ Per-skill verification is the local check. The project-wide bar that applies to 
 
 ### 7. Write Code a Human Wrote
 
-Production code reads like a senior engineer wrote it, not like a template filled in by an AI. Apply this bar to every line you write, especially during vibe coding when there's pressure to just "make it work":
+Production code reads like a senior engineer wrote it, not like a template filled in by an AI. This bar applies to **every line you write or edit** — whether you're creating a new file, changing existing code, fixing a bug, or building a feature. There is no mode where it is relaxed: vibe coding, "just make it work", or a tight deadline do not excuse it. The user hands the codebase to the agent and watches it write; what the agent ships is the product, so every change must be code a human would be comfortable reviewing and merging:
 
 - **Comments explain *why*, never *what*.** Do not restate what the code does (`// increments the counter`). Comment only non-obvious decisions, constraints, or intent a reader cannot see from the code itself.
 - **No commented-out code.** Dead blocks, debug lines, and boilerplate/generated header comments are shipped only by accident. Remove them before you finish.
 - **No AI-tell patterns.** Avoid generic names (`data`, `processData`, `handleClick`, `item`), redundant docstrings, needless abstraction, verbose comments on obvious code, and the same scaffold in every file.
 - **Write for the next reader.** Small functions, real domain names, obvious over clever, follow project conventions, reuse mature libraries instead of reinventing them (see `frontend-craft`/`backend-craft` Library-First principle).
+- **Apply it to edits too, not just new code.** When changing existing code, match the surrounding style, don't leave half-converted patterns, and clean up only what your change makes inconsistent — don't introduce AI-tell code into an existing human codebase.
 - If you catch yourself adding an explanatory comment, first improve the name or structure instead — code that needs a "what" comment is code that isn't self-explanatory yet.
 
-The checkable bar lives in the Definition of Done's Quality section; `code-reviewer` audits it, `code-simplification` removes what violates it.
+The checkable bar lives in the Definition of Done's Quality section; `code-reviewer` audits it, `code-simplification` removes what violates it. This behavior is unconditional — verify it against every file before the task is done.
 
 ## Failure Modes to Avoid
 
@@ -138,6 +139,8 @@ These are the subtle errors that look like productivity but create problems:
 8. Removing things you don't fully understand
 9. Building without a spec because "it's obvious"
 10. Skipping verification because "it looks right"
+11. Vibe coding into the codebase — writing fast, template-looking code because the user said "just make it work", then shipping it without applying the human-code bar (Behavior 7). Speed is never an excuse to lower the bar.
+12. Leaving AI-tell residue — commented-out blocks, generic names, or redundant docstrings in new files or edits, assuming it's fine because "it works"
 
 ## Skill Rules
 
