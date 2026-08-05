@@ -15,6 +15,7 @@ How to use
 Skills by category
 - Install every skill in a category with a single command: `npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/<category>` (the CLI resolves a category folder as a source and installs all skills under it).
 - To install the whole collection, or browse and pick skills individually, run: `npx skills add https://github.com/Emmraan/agent-skills`
+- See [SKILLS_CATEGORIES.md](SKILLS_CATEGORIES.md) for the install command of every category.
 
 Frontend & UI
 
@@ -34,53 +35,7 @@ Backend & APIs
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/backend-apis
 ```
 
-Languages
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/languages
-```
-
-Databases & Data
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/databases-data
-```
-
-AI & Machine Learning
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/ai-ml
-```
-
-DevOps & Cloud
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/devops-cloud
-```
-
-Testing & Quality
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-quality
-```
-
-Design & UX
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/design-ux
-```
-
-Marketing & Growth
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/marketing-growth
-```
-
-Agent & Meta
-
-```bash
-npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/agent-meta
-```
+[Browse all categories](SKILLS_CATEGORIES.md)
 
 Example: add a skill via the `skills` CLI
 
