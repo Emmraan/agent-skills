@@ -12,6 +12,12 @@ How to use
 - Browse a category folder, then open a skill's `SKILL.md` to read its intent, activation signals, and example interactions.
 - These skills are written to be consumed by an AI agent: they include guidance the agent should follow when that capability is activated.
 
+Design: loop engineering + user experience
+- This repository is more than a pile of instruction files. The lifecycle skills are engineered as **loops** — each phase runs with a deterministic exit condition, an iteration budget, and maker/checker verification, so a task stops on evidence, not on the agent "feeling done".
+- The **user experience** is deliberately paired with that engineering: a user drops one prompt, approves the plan once, and the agent runs the rest of the lifecycle autonomously — then returns a delivery report. Two moments of engagement, everything between is unattended.
+- The entry point for this model is the [`loop-orchestrator`](skills/agent-meta/loop-orchestrator/SKILL.md) skill. It scales itself to the task: trivial fixes execute directly, while full app/project work runs the complete DEFINE → PLAN → BUILD → VERIFY → REVIEW → SHIP lifecycle with every quality gate.
+- All skills stay portable: plain `SKILL.md` per the [agentskills.io](https://agentskills.io/specification.md) spec, no tool-specific files, so they work in any agent that supports skills.
+
 Skills by category
 - Install every skill in a category with a single command: `npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/<category>` (the CLI resolves a category folder as a source and installs all skills under it).
 - To install the whole collection, or browse and pick skills individually, run: `npx skills add https://github.com/Emmraan/agent-skills`
