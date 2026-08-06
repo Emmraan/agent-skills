@@ -1,6 +1,6 @@
-# SKILLS Installation Guide
+# SKILLS installation guide
 
-This guide tells you which skills to install for your website, app, or project — so you install only what's relevant and skip the rest. Every project installs the same **Mandatory Core Kit** (the loop engineering + UX design backbone), then a **project-type pack** matched to your work.
+This guide tells you which skills to install for your website, app, or project, so you install only what is relevant. Every project installs the same **Mandatory Core Kit** (the loop engineering and UX design backbone), then a **project-type pack** matched to your work.
 
 Two ways to use this guide:
 
@@ -16,11 +16,11 @@ npx skills add https://github.com/Emmraan/agent-skills --skill <skill-name>     
 
 ---
 
-# Part A — Auto Method (Master Prompt)
+## Part A: Auto Method (Master Prompt)
 
-## The Master Prompt
+### The Master Prompt
 
-Copy-paste the block below into your AI agent (opencode, Claude Code, Cursor, etc.). It works for a **blank repo** and an **existing project** — the agent detects which one it is and behaves accordingly.
+Copy-paste the block below into your AI agent (opencode, Claude Code, Cursor, etc.). It works for a **blank repo** and an **existing project**; the agent detects which one it is and behaves accordingly.
 
 ```text
 Install the right agent skills for this project from my skills collection:
@@ -73,7 +73,7 @@ DETECTION REFERENCE (project signal → project type → pack):
 - Multiple services + Dockerfile + CI → Enterprise / industry-scale
 ```
 
-## Core Kit (installed by the master prompt, always)
+### Core Kit (installed by the master prompt)
 
 | Skill | Why it's mandatory |
 |---|---|
@@ -88,12 +88,13 @@ DETECTION REFERENCE (project signal → project type → pack):
 | `version-control` | Branching, atomic commits, release versioning (SHIP phase). |
 | `sdlc-workflow` | The industry-standard feature pipeline: issue → branch → develop → test → commit → PR → review → CI → merge → staging → QA → production → monitor. Makes the agent build features the way a real company does. |
 | `forward-deployed-engineer` | The embedded-customer operating model: orient in an unfamiliar codebase before coding, extract real requirements conversationally, build in-place matching the repo's conventions, respect the customer's SDLC gates, and hand over maintainable code. |
+| `technical-writer` | Writes professional docs for repos and docs websites: READMEs, tutorials, quickstarts, API references, release notes, and structured Docusaurus/VitePress/MkDocs content with frontmatter and navigation. |
 
 ---
 
-# Part B — Manual Method
+## Part B: Manual Method
 
-## B.1 Mandatory Core Kit — install these first, always
+### B.1 Mandatory Core Kit — install these first
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills --skill loop-orchestrator
@@ -107,13 +108,14 @@ npx skills add https://github.com/Emmraan/agent-skills --skill code-simplificati
 npx skills add https://github.com/Emmraan/agent-skills --skill version-control
 npx skills add https://github.com/Emmraan/agent-skills --skill sdlc-workflow
 npx skills add https://github.com/Emmraan/agent-skills --skill forward-deployed-engineer
+npx skills add https://github.com/Emmraan/agent-skills --skill technical-writer
 ```
 
-## B.2 Project-Type Packs
+### B.2 Project-Type Packs
 
 Pick the pack that matches your project and install only that.
 
-### 1. Marketing website / landing page
+#### 1. Marketing website / landing page
 
 Static or content-first site designed to convert visitors.
 
@@ -126,7 +128,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend
 Key skills: `create-website`, `storybrand-messaging`, `one-page-marketing`, `made-to-stick`, `cro-methodology`, `top-design`, `frontend-core`, `frontend-craft`, `seo`.
 Skip: backend, databases, testing-heavy packs (unless you add a store or app).
 
-### 2. Web app — frontend only
+#### 2. Web app — frontend only
 
 A client-rendered app with a UI and a third-party/existing API.
 
@@ -138,7 +140,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/animatio
 Key skills: `frontend-core`, `frontend-craft`, your framework (`react`, `nextjs`, `vue`, `svelte`, `angular`), `typescript`, `tailwind-css`, `vite`, `motion`, `microinteractions`.
 Skip: backend-apis, databases-data, devops-cloud (unless you also own the API).
 
-### 3. Web app — full stack
+#### 3. Web app — full stack
 
 A project where you own the UI and the backend.
 
@@ -152,7 +154,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-
 
 Key skills: `frontend-core`, `frontend-craft`, `backend-core`, `backend-craft`, `api-design`, `authentication`, `database-architecture`, `security`, `browser-testing-with-devtools`, `playwright-expert`.
 
-### 4. Backend / API only
+#### 4. Backend / API only
 
 APIs, services, or backend systems with no UI.
 
@@ -165,7 +167,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-
 
 Key skills: `backend-core`, `backend-craft`, `api-design`, `authentication`, `caching`, `messaging`, `database-architecture`, `database-performance`, `security`, `testing`, `test-master`. Add your language skill from `languages/` (`node`, `python-pro`, `golang-pro`, `java-architect`, etc.).
 
-### 5. Mobile app (Flutter)
+#### 5. Mobile app (Flutter)
 
 Cross-platform mobile app.
 
@@ -176,7 +178,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend
 
 Add `backend-apis` + `databases-data` if the app talks to your own backend.
 
-### 6. E-commerce
+#### 6. E-commerce
 
 Online store on Shopify or WordPress/WooCommerce.
 
@@ -187,7 +189,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend
 
 Shopify: `shopify-expert`. WordPress/WooCommerce: `wordpress-pro`. Add `seo` and `cro-methodology` for growth, `create-website` for the storefront design.
 
-### 7. AI / ML application
+#### 7. AI / ML application
 
 ML pipelines, fine-tuning, or AI-backed apps.
 
@@ -198,7 +200,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/database
 
 Key skills: `ml-pipeline`, `fine-tuning-expert`, `rag`, `fastapi-expert`, `django-expert`, `pandas-pro`. Add `backend-apis` for the serving API.
 
-### 8. Animation / 3D-heavy site
+#### 8. Animation / 3D-heavy site
 
 Sites that lean on WebGL, GSAP, or motion design.
 
@@ -209,7 +211,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend
 
 Key skills: `gsap-core`, `gsap-scrolltrigger`, `gsap-react`, `motion`, `threejs-webgl`, `react-three-fiber`, `pixijs-2d`, `lottie-animations`, `barba-js`, `frontend-craft`, `top-design`.
 
-### 9. Existing site improvement
+#### 9. Existing site improvement
 
 A live site that underperforms — fix conversion, UX, speed, or SEO.
 
@@ -222,7 +224,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-
 
 Key skills: `improve-website`, `grow-website`, `cro-methodology`, `seo`, `refactoring-ui`, `ux-heuristics`, `frontend-performance`, `high-perf-browser`, `browser-testing-with-devtools`. Use `create-website` only if rebuilding from scratch.
 
-### 10. Enterprise / industry-scale system
+#### 10. Enterprise / industry-scale system
 
 Multiple services, real deployments, SLOs, and production rigor.
 
@@ -238,7 +240,7 @@ Add: `architecture-designer`, `doubt-driven-development`, `fullstack-guardian`, 
 
 ---
 
-# Part C — Install Commands Reference
+## Part C: Install Commands Reference
 
 ```bash
 # Install a whole category (all skills under it)
@@ -260,7 +262,7 @@ npx skills --help
 Available categories (full command list in [SKILLS_CATEGORIES.md](SKILLS_CATEGORIES.md)):
 `frontend-ui`, `animation-webgl`, `backend-apis`, `languages`, `databases-data`, `ai-ml`, `devops-cloud`, `testing-quality`, `design-ux`, `marketing-growth`, `agent-meta`.
 
-## Verify It Works
+### Verify it works
 
 After installing, confirm the skills are live in your agent:
 

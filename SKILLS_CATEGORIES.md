@@ -1,68 +1,68 @@
-# Skills by Category
+# Skills by category
 
-Install every skill in a category with a single command. See [README.md](README.md) for an overview. New to the repo? Use the auto-install master prompt or the project-type guide in [SKILLS_INSTALLATION_GUIDE.md](SKILLS_INSTALLATION_GUIDE.md).
+Install every skill in a category with a single command. See [README.md](README.md) for an overview, and [SKILLS_INSTALLATION_GUIDE.md](SKILLS_INSTALLATION_GUIDE.md) for the auto-install master prompt and project-type guide.
 
-Frontend & UI
+## Frontend & UI
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend-ui
 ```
 
-Animation & WebGL
+## Animation & WebGL
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/animation-webgl
 ```
 
-Backend & APIs
+## Backend & APIs
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/backend-apis
 ```
 
-Languages
+## Languages
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/languages
 ```
 
-Databases & Data
+## Databases & Data
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/databases-data
 ```
 
-AI & Machine Learning
+## AI & Machine Learning
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/ai-ml
 ```
 
-DevOps & Cloud
+## DevOps & Cloud
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/devops-cloud
 ```
 
-Testing & Quality
+## Testing & Quality
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-quality
 ```
 
-Design & UX
+## Design & UX
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/design-ux
 ```
 
-Marketing & Growth
+## Marketing & Growth
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/marketing-growth
 ```
 
-Agent & Meta
+## Agent & Meta
 
 ```bash
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/agent-meta
