@@ -1,10 +1,10 @@
 ---
 name: markdown-for-agents
-description: 'Make every website page AI-agent-friendly by shipping a Markdown version of each page so agents consume content at a fraction of the tokens. Provider-neutral core: per-page meta tags + JSON-LD + a static .md mirror per page + sitemap submission. Includes the Cloudflare "Markdown for Agents" edge-conversion option for sites on Cloudflare Pro+. Use whenever building/launching a website, landing page, or docs site.'
+description: 'Make every website page AI-agent-friendly by shipping a Markdown version of each page so agents consume content at a fraction of the tokens. Provider-neutral core: per-page meta tags + JSON-LD + a static .md mirror per page + sitemap submission + the /llms.txt site index. Includes the Cloudflare "Markdown for Agents" edge-conversion option for sites on Cloudflare Pro+. Use whenever building/launching a website, landing page, or docs site, or when a user mentions llms.txt.'
 license: MIT
 metadata:
-  author: Emmraan
-  version: 1.0.0
+  author: Emmraan; llms.txt spec by AnswerDotAI (Jeremy Howard)
+  version: 1.1.0
 ---
 
 # Markdown for Agents
@@ -125,8 +125,66 @@ If any check fails, fix the page (usually a missing meta tag, heavy markup in th
 
 ### Phase 6 — Sitemap and discoverability
 
-- Add each Markdown mirror's URL to the XML sitemap (alongside its HTML twin), or serve an `llms.txt` listing the Markdown pages.
+- Add each Markdown mirror's URL to the XML sitemap (alongside its HTML twin).
+- Serve an `/llms.txt` index that lists the Markdown pages (see "The `/llms.txt` file" below).
 - Submit the sitemap to Google Search Console so AI crawlers and search engines index the agent-friendly versions.
+
+## The `/llms.txt` file
+
+An `/llms.txt` file is the site-level index for LLMs: a single markdown file at the root path (`/llms.txt`) that gives a short summary of the site and links to the clean markdown pages agents should read. It is a community proposal by AnswerDotAI (Jeremy Howard), Apache-2.0, published September 2024 at llmstxt.org. It standardizes a path (like `/robots.txt`) so any agent can find the curated content without crawling HTML.
+
+The spec defines the file contents, in this order:
+
+1. **H1** — the name of the project or site. This is the only required section.
+2. **A blockquote** — a short summary containing the key information needed to understand the rest of the file.
+3. **Zero or more markdown sections** (paragraphs, lists) of any type except headings — more detail about the project and how to interpret the files.
+4. **Zero or more H2 sections** containing "file lists" of URLs where further detail is available. Each file list is a markdown list of hyperlinks `[name](url)`, optionally followed by `:` and notes.
+
+The `## Optional` section has special meaning: URLs there can be skipped if a shorter context is needed. Use it for secondary information.
+
+Mock example:
+
+```text
+# Title
+
+> Optional description goes here
+
+Optional details go here
+
+## Section name
+
+- [Link title](https://link_url): Optional link details
+
+## Optional
+
+- [Link title](https://link_url)
+```
+
+Guidelines from the spec for an effective `/llms.txt`:
+
+- Use concise, clear language.
+- When linking to resources, include brief, informative descriptions.
+- Avoid ambiguous terms or unexplained jargon.
+- Run a tool that expands the index into an LLM context file and test whether models can answer questions about your content.
+
+Tools and plugins:
+
+- `llms_txt2ctx` (pip, from the AnswerDotAI repo) — parses `/llms.txt` and expands linked pages into a single LLM context file.
+- `vitepress-plugin-llms` — generates an llms.txt file for VitePress docs sites.
+- `docusaurus-plugin-llms` — generates an llms.txt file for Docusaurus docs sites.
+
+### Relationship: `/llms.txt` vs page-level delivery
+
+The two approaches compose; one is not a replacement for the other.
+
+| Concern | `/llms.txt` | Page-level phases (1–3) |
+|---|---|---|
+| Scope | Site index: one file pointing at the important pages | Per-page delivery: every page is AI-readable |
+| Headers | None — plain markdown links | Meta tags, JSON-LD, YAML frontmatter |
+| Role | "Here is the site, start with these pages" | "Here is exactly this page, clean and cheap" |
+| Composition | Lists the `.md` mirrors as its file lists | Produces the `.md` mirrors the index links to |
+
+Ship both: Phases 1–3 make each page a clean `.md` mirror; the `/llms.txt` file curates which mirrors matter and in what order.
 
 ## Common Mistakes
 
@@ -149,3 +207,9 @@ If any check fails, fix the page (usually a missing meta tag, heavy markup in th
 - [ ] Markdown contains only frontmatter, content, and JSON-LD — no boilerplate
 - [ ] Token savings verified: `x-markdown-tokens` is a small fraction of `x-original-tokens`
 - [ ] Markdown URLs are in the sitemap and submitted to Search Console
+- [ ] An `/llms.txt` index exists, follows the spec order, and links to the Markdown mirrors
+
+## Related skills
+
+- `technical-writer` — writes the docs-site content (Docusaurus/VitePress/MkDocs frontmatter and navigation) that pairs with `/llms.txt` generation.
+- `code-documenter` — for docstrings and OpenAPI specs that feed API reference pages.
