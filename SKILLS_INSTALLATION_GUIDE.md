@@ -125,7 +125,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/marketin
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend-ui
 ```
 
-Key skills: `create-website`, `storybrand-messaging`, `one-page-marketing`, `made-to-stick`, `cro-methodology`, `top-design`, `frontend-core`, `frontend-craft`, `seo`.
+Key skills: `create-website`, `storybrand-messaging`, `one-page-marketing`, `made-to-stick`, `cro-methodology`, `top-design`, `frontend-core`, `frontend-craft`, `seo`. For a personal developer or designer portfolio, use `high-converting-portfolio-builder`.
 Skip: backend, databases, testing-heavy packs (unless you add a store or app).
 
 #### 2. Web app — frontend only
