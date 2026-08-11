@@ -1,0 +1,227 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "Agent & Meta",
+      "skills": [
+        "architecture-designer",
+        "atlassian-mcp",
+        "cli-developer",
+        "code-documenter",
+        "context-engineering",
+        "doubt-driven-development",
+        "feature-forge",
+        "forward-deployed-engineer",
+        "fullstack-guardian",
+        "idea-refine",
+        "incremental-implementation",
+        "interview-me",
+        "legacy-modernizer",
+        "loop-orchestrator",
+        "markdown-for-agents",
+        "mcp-developer",
+        "planning-and-task-breakdown",
+        "prompt-engineer",
+        "requirements-analysis",
+        "sdlc-workflow",
+        "source-driven-development",
+        "spec-miner",
+        "technical-writer",
+        "the-fool",
+        "using-agent-skills"
+      ]
+    },
+    {
+      "title": "AI & Machine Learning",
+      "skills": [
+        "django-expert",
+        "fastapi-expert",
+        "fine-tuning-expert",
+        "ml-pipeline"
+      ]
+    },
+    {
+      "title": "Animation & WebGL",
+      "skills": [
+        "aframe-webxr",
+        "animejs",
+        "babylonjs-engine",
+        "barba-js",
+        "game-developer",
+        "gsap-core",
+        "gsap-frameworks",
+        "gsap-performance",
+        "gsap-plugins",
+        "gsap-react",
+        "gsap-scrolltrigger",
+        "gsap-timeline",
+        "gsap-utils",
+        "lottie-animations",
+        "microinteractions",
+        "motion",
+        "pixijs-2d",
+        "pixijs-application",
+        "pixijs-assets",
+        "pixijs-core-concepts",
+        "pixijs-events",
+        "pixijs-filters",
+        "pixijs-scene-container",
+        "pixijs-scene-graphics",
+        "pixijs-scene-sprite",
+        "pixijs-scene-text",
+        "pixijs-ticker",
+        "playcanvas-engine",
+        "react-spring-physics",
+        "react-three-fiber",
+        "steve-jobs-design-review",
+        "threejs-webgl"
+      ]
+    },
+    {
+      "title": "Backend & APIs",
+      "skills": [
+        "api-design",
+        "authentication",
+        "backend-core",
+        "backend-craft",
+        "caching",
+        "express",
+        "fastify",
+        "file-storage",
+        "graphql-architect",
+        "integrations",
+        "messaging",
+        "microservices-architect",
+        "nestjs",
+        "node",
+        "salesforce-developer",
+        "spring-boot-engineer",
+        "websocket-engineer"
+      ]
+    },
+    {
+      "title": "Databases & Data",
+      "skills": [
+        "database-architecture",
+        "database-optimizer",
+        "database-performance",
+        "pandas-pro",
+        "postgres-pro",
+        "rag",
+        "spark-engineer",
+        "sql-pro"
+      ]
+    },
+    {
+      "title": "Design & UX",
+      "skills": [
+        "create-website",
+        "design-everyday-things",
+        "high-converting-portfolio-builder",
+        "product-architecture",
+        "refactoring-ui",
+        "top-design",
+        "ui-ux",
+        "ux-heuristics",
+        "web-typography"
+      ]
+    },
+    {
+      "title": "DevOps & Cloud",
+      "skills": [
+        "chaos-engineer",
+        "cloud",
+        "devops",
+        "embedded-systems",
+        "kubernetes-specialist",
+        "monitoring",
+        "scalability",
+        "secure-code-guardian",
+        "security",
+        "sre-engineer",
+        "terraform-engineer",
+        "version-control"
+      ]
+    },
+    {
+      "title": "Frontend & UI",
+      "skills": [
+        "angular",
+        "flutter-expert",
+        "frontend-core",
+        "frontend-craft",
+        "frontend-performance",
+        "high-perf-browser",
+        "nextjs",
+        "nuxt",
+        "react",
+        "shadcn",
+        "svelte",
+        "tailwind-css",
+        "typescript",
+        "vite",
+        "vue",
+        "vueuse",
+        "webflow",
+        "webflow-mcp:cms-best-practices",
+        "webflow-mcp:cms-collection-setup",
+        "webflow-code-component:component-scaffold",
+        "webflow-mcp:custom-code-management",
+        "webflow-code-component:deploy-guide",
+        "webflow-mcp:figma-to-webflow",
+        "webflow-code-component:local-dev-setup",
+        "webflow-code-component:pre-deploy-check",
+        "webflow-mcp:site-audit",
+        "webflow-code-component:troubleshoot-deploy"
+      ]
+    },
+    {
+      "title": "Languages",
+      "skills": [
+        "cpp-pro",
+        "csharp-developer",
+        "dotnet-core-expert",
+        "golang-pro",
+        "java-architect",
+        "javascript-pro",
+        "kotlin-specialist",
+        "laravel-specialist",
+        "php-pro",
+        "python-pro",
+        "rails-expert",
+        "rust-engineer",
+        "swift-expert"
+      ]
+    },
+    {
+      "title": "Marketing & Growth",
+      "skills": [
+        "contagious",
+        "cro-methodology",
+        "grow-website",
+        "hundred-million-offers",
+        "improve-website",
+        "influence-psychology",
+        "made-to-stick",
+        "one-page-marketing",
+        "scorecard-marketing",
+        "seo",
+        "shopify-expert",
+        "storybrand-messaging",
+        "wordpress-pro"
+      ]
+    },
+    {
+      "title": "Testing & Quality",
+      "skills": [
+        "browser-testing-with-devtools",
+        "code-reviewer",
+        "code-simplification",
+        "debugging-wizard",
+        "playwright-expert",
+        "test-master",
+        "testing"
+      ]
+    }
+  ]
+}
