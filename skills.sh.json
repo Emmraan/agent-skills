@@ -85,6 +85,7 @@
         "backend-core",
         "backend-craft",
         "caching",
+        "dpdpa-compliance",
         "express",
         "fastify",
         "file-storage",
