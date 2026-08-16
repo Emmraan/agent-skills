@@ -58,8 +58,9 @@ function parseFrontmatter(content) {
 }
 
 function validate(skillRel) {
-  const dir = join(repoRoot, skillRel)
-  const file = join(dir, 'SKILL.md')
+  const isFile = /SKILL\.md$/i.test(skillRel)
+  const dir = isFile ? dirname(resolve(repoRoot, skillRel)) : resolve(repoRoot, skillRel)
+  const file = isFile ? resolve(repoRoot, skillRel) : join(dir, 'SKILL.md')
   const content = readFileSync(file, 'utf8')
   const lines = content.split(/\r?\n/)
   const issues = []

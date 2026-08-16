@@ -34,13 +34,14 @@ Research summary (web + repo analysis) for keeping `typecheck`, `lint`, `test`, 
 
 Detect the machine (RAM, cores) before running heavy work. Never silently run a long command on a low-end system.
 
-1. **Defer heavy installs/builds to the user.** `pnpm install`, Docker image builds, full monorepo builds on a low-end machine: ask the user to run them, or run them one at a time with output shown.
-2. **Container-isolated deps.** Best pattern (secure-local-dev-env): deps install inside a `deps` profile container; the host needs no Node/pnpm — low-end host stays light. `just deps` handles it.
-3. **Lightweight tools.** Prefer pnpm (content-addressed store dedupes disk) over npm; prefer Biome/Oxlint over heavy ESLint configs; skip Docker entirely for simple projects.
-4. **Disk hygiene.** `pnpm store prune`, `npm cache verify`, `docker system prune` on a schedule; move ephemeral build dirs to fast NVMe/tmpfs if I/O-bound.
-5. **Watch resource limits.** Containers with too much CPU/memory allocation slow the whole machine; keep file-watcher scope minimal.
-6. **Never block on parallel heavy jobs.** On low-end, run check/lint/typecheck sequentially instead of `--parallel`.
-7. **Clean checkout validation.** Verify `install`, `dev`, `test`, `lint`, `build` work from a clean checkout on the low-end machine before declaring setup done.
+1. **Heavy installs/builds are the user's job.** `pnpm install`, Docker image builds, full monorepo builds, and any single command expected to take minutes on a low-end machine: the user runs them, or explicitly asks the agent to. The agent never silently runs them.
+2. **Fast commands auto-run.** Anything that completes in seconds (writing config files, adding npm scripts, running lint on staged files) the agent runs itself without asking.
+3. **Container-isolated deps.** Best pattern (secure-local-dev-env): deps install inside a `deps` profile container; the host needs no Node/pnpm — low-end host stays light. `just deps` handles it.
+4. **Lightweight tools.** Prefer pnpm (content-addressed store dedupes disk) over npm; prefer Biome/Oxlint over heavy ESLint configs; skip Docker entirely for simple projects.
+5. **Disk hygiene.** `pnpm store prune`, `npm cache verify`, `docker system prune` on a schedule; move ephemeral build dirs to fast NVMe/tmpfs if I/O-bound.
+6. **Watch resource limits.** Containers with too much CPU/memory allocation slow the whole machine; keep file-watcher scope minimal.
+7. **Never block on parallel heavy jobs.** On low-end, run check/lint/typecheck sequentially instead of `--parallel`.
+8. **Clean checkout validation.** Verify `install`, `dev`, `test`, `lint`, `build` work from a clean checkout on the low-end machine before declaring setup done.
 
 ## CI speed notes
 

@@ -206,7 +206,7 @@ What works in CI must work locally with the same commands, and low-end machines 
 
 1. Run the **exact CI commands locally**: same install, typecheck, lint, test, and build scripts; pinned versions (`.nvmrc`, `packageManager`, committed lockfile) so "works on my machine" stops being a phrase.
 2. Keep local dev **fast**: fast gates locally, heavy gates in CI (see `tooling-speed-notes.md`); typechecking never blocks the hot-reload loop.
-3. **Container-isolated deps on low-end machines**: dependencies install inside a container; the host needs no Node or pnpm. Heavy work (installs, Docker builds, full monorepo builds) runs in containers or waits for the user — never silently on a low-end host.
+3. **Container-isolated deps on low-end machines**: dependencies install inside a container; the host needs no Node or pnpm. Heavy work (installs, Docker builds, full monorepo builds) is the user's job to run (or the agent runs it only when the user asks) — never silently on a low-end host.
 4. Configuration differs only through environment (`.env`), never through code; the same code path runs everywhere.
 5. Database parity: local migrations match production and are forward-only, exactly like prod.
 6. Time and locale: no reliance on the local clock, timezone, or default locale.
