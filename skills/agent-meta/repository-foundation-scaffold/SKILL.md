@@ -3,7 +3,7 @@ name: repository-foundation-scaffold
 description: Sets up a new repository at the level the project actually needs — L1 solo starter, L2 team/community, or L3 PASS/SAAS-ready — and only creates the files that level justifies, never a kitchen sink. Use when starting a new project and asked to set up the repo (README, LICENSE, .gitignore, CI), when unsure how much governance a repo needs, when the repo must keep typecheck/lint/test/build fast locally, when the dev machine is low-end (little RAM/CPU), or when moving a solo repo up to a team or paid-SaaS project.
 ---
 
-<!-- Decision freeze (PLAN.md Phase 0): 4 skills; English; SKILL.md self-contained, references optional; level-based setup — full enterprise scaffold ONLY for L3; ultra-fast local dev is a hard L3 requirement; fast tools opt-in where experimental, proven tools stay default; no prompt-injection / instruction-override / exfiltration language. -->
+<!-- Decision freeze (docs/reference/DECISIONS.md): 4 skills; English; SKILL.md self-contained, references optional; level-based setup — full enterprise scaffold ONLY for L3; ultra-fast local dev is a hard L3 requirement; fast tools opt-in where experimental, proven tools stay default; no prompt-injection / instruction-override / exfiltration language. -->
 
 # Repository Foundation Scaffold
 

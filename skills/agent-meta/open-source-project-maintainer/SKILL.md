@@ -3,7 +3,7 @@ name: open-source-project-maintainer
 description: Runs and grows an open-source repository at L2/L3 — branching model, changelog fragments, contributor policies, dual licensing, funding and ownership, issue templates, and the full release-propagation pipeline. Use when the user asks to run or maintain an OSS repo, set up governance for an open community or team repo, pick a branching strategy (trunk, canary-to-main, merge queue), adopt changelog fragments or Conventional Commits with a tested-PR rule, dual-license an open-core project, add FUNDING/CODEOWNERS or issue templates, or release a versioned product that must keep install scripts and downstream CLI/SDK/MCP artifacts in lockstep.
 ---
 
-<!-- Decision freeze (PLAN.md Phase 0): 4 skills; English; SKILL.md self-contained, references optional; governance + release propagation apply at L2/L3 (L1 solo repos skip them); changelog fragments replace hand-editing CHANGELOG.md; release steps gate on evidence, not assertion; no prompt-injection / instruction-override / exfiltration language. -->
+<!-- Decision freeze (docs/reference/DECISIONS.md): 4 skills; English; SKILL.md self-contained, references optional; governance + release propagation apply at L2/L3 (L1 solo repos skip them); changelog fragments replace hand-editing CHANGELOG.md; release steps gate on evidence, not assertion; no prompt-injection / instruction-override / exfiltration language. -->
 
 # Open Source Project Maintainer
 

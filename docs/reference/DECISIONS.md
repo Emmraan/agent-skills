@@ -1,6 +1,6 @@
 # Decision Freeze — Skill Development Plan
 
-Frozen at Phase 0 of `PLAN.md`. These decisions are locked and referenced by every skill; no scope creep beyond them.
+Frozen at Phase 0. These decisions are locked and referenced by every skill; no scope creep beyond them.
 
 ## The 4 decisions
 

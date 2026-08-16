@@ -3,7 +3,7 @@ name: github-actions-engineering
 description: Designs GitHub Actions workflows that are correct, fast, and cheap: workflow taxonomy (CI, PR, release, security, nightly) with per-type guidance, test matrix and shards, path filters, concurrency groups, least-privilege permissions, and secrets hygiene; multi-arch Docker images with buildx per-arch legs plus imagetools manifest combine; version-gated canary-to-main release PR automation; and CI speed and cost tuning (pnpm store and BuildKit caching, --frozen-lockfile, fast-on-PR rules, benchmark-before-optimizing). Use when creating or auditing a repo's .github/workflows, making slow or expensive workflows faster and cheaper, adding multi-arch container images, automating a version-gated release, cancelling wasted runner minutes, or keeping PR checks fast.
 ---
 
-<!-- Decision freeze (PLAN.md Phase 0 + docs/reference/DECISIONS.md): 4 skills; English; SKILL.md self-contained, references optional; fast gates on PR, heavy gates nightly; multi-arch images via buildx per-arch legs + imagetools manifest combine; version-gated canary-to-main promotion; caching over blind optimization, measure before optimizing; no prompt-injection / instruction-override / exfiltration language. -->
+<!-- Decision freeze (docs/reference/DECISIONS.md): 4 skills; English; SKILL.md self-contained, references optional; fast gates on PR, heavy gates nightly; multi-arch images via buildx per-arch legs + imagetools manifest combine; version-gated canary-to-main promotion; caching over blind optimization, measure before optimizing; no prompt-injection / instruction-override / exfiltration language. -->
 
 # GitHub Actions Engineering
 
