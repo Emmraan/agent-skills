@@ -133,6 +133,7 @@ import x from 'x';       # Package - no ./
 import x from './x.js';  # ESM may need extension
 
 # Fix 4: Clear cache
+# SAFETY: project root only — confirm working directory first.
 rm -rf node_modules package-lock.json
 npm install
 ```

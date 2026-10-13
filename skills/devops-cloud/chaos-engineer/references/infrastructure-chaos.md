@@ -164,6 +164,9 @@ class AWSChaosSimulator:
 ```bash
 #!/bin/bash
 # CPU stress test using stress-ng
+# SAFETY: resource-exhaustion test — dedicated test host only, never a
+# personal workstation. Time-boxed, monitored, with explicit human
+# approval; stop immediately on user request.
 
 # Install stress-ng
 sudo apt-get install -y stress-ng

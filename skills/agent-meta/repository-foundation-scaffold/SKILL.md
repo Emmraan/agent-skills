@@ -153,7 +153,7 @@ Rules:
 1. **Defer heavy installs/builds to the user** — or run them one at a time with output shown. Never silently run a long command on a low-end system.
 2. **Container-isolated deps** — deps install inside a container profile; the host needs no Node/pnpm. Best pattern on low-end hosts.
 3. **Lightweight tools** — pnpm over npm (dedupes disk); Biome/Oxlint over heavy ESLint configs; skip Docker entirely for simple projects.
-4. **Disk hygiene** — `pnpm store prune`, `npm cache verify`, `docker system prune` on a schedule.
+4. **Disk hygiene** — `pnpm store prune`, `npm cache verify`, `docker system prune` on a schedule (confirm scope first; never with `--volumes` or on shared hosts without explicit approval).
 5. **Watch resource limits** — containers with too much CPU/memory allocation slow the whole machine; keep file-watcher scope minimal.
 6. **Never block on parallel heavy jobs** — run check/lint/typecheck sequentially instead of `--parallel`.
 7. **Clean checkout validation** — verify `install`, `dev`, `test`, `lint`, `build` from a clean checkout on the low-end machine before declaring setup done.

@@ -6,6 +6,8 @@
 
 ```bash
 # Install Istio CLI
+# SAFETY: pipe-to-shell runs remote code. Download, inspect, then
+# execute; require explicit human approval before running.
 curl -L https://istio.io/downloadIstio | sh -
 export PATH=$PWD/istio-*/bin:$PATH
 
@@ -319,6 +321,8 @@ spec:
 
 ```bash
 # Install Linkerd CLI
+# SAFETY: pipe-to-shell runs remote code. Download, inspect, then
+# execute; require explicit human approval before running.
 curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
 export PATH=$HOME/.linkerd2/bin:$PATH
 

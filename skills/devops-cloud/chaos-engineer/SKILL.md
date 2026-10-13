@@ -53,6 +53,7 @@ Non-obvious constraints that must be enforced on every experiment:
 - **Automated rollback ≤ 30 seconds** — abort path must be scripted and tested before the experiment begins
 - **Single variable** — change only one failure condition at a time until behaviour is well understood
 - **No production without safety nets** — customer-facing environments require circuit breakers, feature flags, or canary isolation
+- **Explicit human approval** — never inject failure, delete pods/resources, or exhaust host resources without confirmed approval of target, scope, and time-box
 - **Close the loop** — every experiment must produce a written learning summary and at least one tracked improvement
 
 ## Output Templates

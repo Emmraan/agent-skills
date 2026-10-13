@@ -266,6 +266,8 @@ jobs:
       - name: Cleanup chaos resources
         if: always()
         run: |
+          # SAFETY: test-cluster cleanup only — chaos experiment CRs from this
+          # run. Never point at production; require explicit human approval.
           kubectl delete chaosengine --all
           kubectl delete chaosexperiments --all
 

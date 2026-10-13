@@ -251,6 +251,8 @@ curl -v http://web-app:80
 nc -zv web-app 80
 
 # Temporarily allow all traffic (testing only)
+# SAFETY: deletes all NetworkPolicies in the namespace — non-production
+# test cluster only, restore immediately after, explicit human approval.
 kubectl delete networkpolicy --all -n production
 ```
 

@@ -32,6 +32,9 @@ SELECT * FROM pg_create_physical_replication_slot('replica_1');
 # Stop PostgreSQL on standby
 systemctl stop postgresql
 
+# SAFETY: standby host only — destructive step. Verify the path,
+# confirm a restorable backup exists, and require explicit human
+# approval before running. Never run against primary/production data.
 # Remove data directory
 rm -rf /var/lib/postgresql/14/main/*
 
@@ -374,6 +377,8 @@ pg_basebackup -h localhost -U postgres \
 systemctl stop postgresql
 
 # Restore base backup
+# SAFETY: destructive step — verify target path and restorable backup,
+# require explicit human approval. Never run against primary/production data.
 rm -rf /var/lib/postgresql/14/main/*
 tar -xzf /backup/base/20241201/base.tar.gz -C /var/lib/postgresql/14/main
 

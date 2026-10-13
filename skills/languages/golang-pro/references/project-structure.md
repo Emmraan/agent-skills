@@ -277,6 +277,8 @@ run:
 
 # Clean build artifacts
 clean:
+	# SAFETY: build-dir only — $(BUILD_DIR) must be a project-local output
+	# directory. Verify before running; never point at source or home dirs.
 	rm -rf $(BUILD_DIR)
 	rm -f coverage.out
 

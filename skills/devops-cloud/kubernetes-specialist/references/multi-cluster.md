@@ -8,6 +8,8 @@
 
 ```bash
 # Install clusterctl CLI
+# SAFETY: verify the release URL and checksum, and require explicit
+# human approval before installing binaries with sudo.
 curl -L https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.6.0/clusterctl-linux-amd64 -o clusterctl
 chmod +x clusterctl && sudo mv clusterctl /usr/local/bin/
 
@@ -148,6 +150,8 @@ spec:
 
 ```bash
 # Install subctl
+# SAFETY: pipe-to-shell runs remote code. Download, inspect, then
+# execute; require explicit human approval before running.
 curl -Ls https://get.submariner.io | bash
 
 # Join clusters to broker
