@@ -8,6 +8,6 @@
 
 ## Testing
 
-- [ ] `node scripts/validate-skills.mjs` passes (4/4)
+- [ ] `node scripts/validate-skills.mjs` passes on changed skills (`--all` for the full sweep)
 - [ ] Web UI changes: `cd web && pnpm build` passes
 - [ ] Docs updated if the change affects installation or usage

@@ -31,7 +31,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/validate-skills.mjs
+      - name: Validate changed skills (PR)
+        if: github.event_name == 'pull_request'
+        run: |
+          base="origin/${{ github.base_ref }}"
+          files=$(git diff --name-only "$base"...HEAD -- 'skills/**/SKILL.md')
+          if git diff --name-only "$base"...HEAD -- scripts/validate-skills.mjs scripts/validate-grandfather.json | grep -q .; then
+            node scripts/validate-skills.mjs --all
+          elif [ -z "$files" ]; then
+            node scripts/validate-skills.mjs
+          else
+            printf '%s' "$files" | xargs node scripts/validate-skills.mjs
+          fi
+      - name: Validate all skills (push to main)
+        if: github.event_name != 'pull_request'
+        run: node scripts/validate-skills.mjs --all

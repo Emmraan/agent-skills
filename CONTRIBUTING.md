@@ -14,7 +14,7 @@ Thanks for contributing to this skills collection. This guide covers how to run,
 node scripts/validate-skills.mjs
 ```
 
-Expect `4/4 skills passed.` The script checks the core skills for valid frontmatter, description length, body line limit, and prompt-injection hygiene patterns.
+Expect `4/4 skills passed.` With no args the script checks the 4 core skills; pass changed `SKILL.md` paths to check those (this is what CI gates on PRs), or `--all` for the full sweep. It checks valid frontmatter, description length, body line limit, prompt-injection hygiene, and destructive-command safety (`references/` and `scripts/` included). Pre-existing legacy failures are listed in `scripts/validate-grandfather.json` and report as warnings, not failures.
 
 ## Building the web UI
 
@@ -33,7 +33,7 @@ pnpm build        # production build
 2. Frontmatter: `name` must match the folder name; `description` under 1024 characters.
 3. Body under 500 lines; content in English. Larger skills split detail into optional `references/`, `scripts/`, and `assets/` folders.
 4. Keep it a plain `SKILL.md` per the agentskills.io spec — no tool-specific files.
-5. Run `node scripts/validate-skills.mjs` and confirm it still passes.
+5. Run `node scripts/validate-skills.mjs <paths to your changed SKILL.md>` (or `--all` for the full sweep) and confirm it still passes.
 
 ## Commit conventions
 
