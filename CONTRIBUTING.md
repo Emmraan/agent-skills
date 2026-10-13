@@ -2,6 +2,8 @@
 
 Thanks for contributing to this skills collection. This guide covers how to run, test, and contribute skills, and the conventions this repo follows.
 
+> **Before you change anything — human or AI agent:** read [`docs/contributing/pr-readiness.md`](docs/contributing/pr-readiness.md). It is the enforceable PR checklist (exact commands, gates, and evidence). If your change alters the contribution workflow itself, update that guide in the same PR.
+
 ## Repository layout
 
 - `skills/` — every skill lives in its own folder under a category folder (for example `skills/frontend-ui/react/`), and contains a `SKILL.md`.
@@ -47,6 +49,8 @@ Use Conventional Commits:
 Keep commits atomic: one logical change per commit.
 
 ## Opening a PR
+
+> Follow [`docs/contributing/pr-readiness.md`](docs/contributing/pr-readiness.md) — it defines Ready / Not Ready / Needs Clarification and the exact pre-submission checklist.
 
 - Include a short summary of the change and representative examples where relevant.
 - A PR must be checkable and reviewable: every changed skill passes `node scripts/validate-skills.mjs`, and web changes must build.

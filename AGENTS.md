@@ -63,3 +63,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+
+## 5. Keep the contribution guide in sync
+
+When your change alters the contribution workflow — `scripts/validate-skills.mjs`, `scripts/validate-grandfather.json`, `.github/workflows/`, `.github/pull_request_template.md`, root or `web/package.json` scripts, skill spec limits, or generated-index behavior — update `docs/contributing/pr-readiness.md` in the same PR (see its §11). Never invent commands; copy them from the changed config.
