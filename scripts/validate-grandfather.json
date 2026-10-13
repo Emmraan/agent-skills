@@ -6,36 +6,6 @@
   "skills/animation-webgl/pixijs-2d/pixijs-scene-graphics": [
     "body"
   ],
-  "skills/api-design": [
-    "body"
-  ],
-  "skills/authentication": [
-    "body"
-  ],
-  "skills/caching": [
-    "body"
-  ],
-  "skills/cloud": [
-    "frontmatter"
-  ],
-  "skills/database-architecture": [
-    "body"
-  ],
-  "skills/database-performance": [
-    "body"
-  ],
-  "skills/devops": [
-    "frontmatter"
-  ],
-  "skills/file-storage": [
-    "body"
-  ],
-  "skills/frontend-core": [
-    "body"
-  ],
-  "skills/frontend-performance": [
-    "body"
-  ],
   "skills/frontend-ui/webflow/cms-best-practices": [
     "frontmatter",
     "body"
@@ -67,37 +37,7 @@
   "skills/frontend-ui/webflow/troubleshoot-deploy": [
     "frontmatter"
   ],
-  "skills/integrations": [
-    "body"
-  ],
   "skills/marketing-growth/improve-website": [
     "description"
-  ],
-  "skills/messaging": [
-    "body"
-  ],
-  "skills/monitoring": [
-    "frontmatter"
-  ],
-  "skills/rag": [
-    "frontmatter"
-  ],
-  "skills/scalability": [
-    "frontmatter"
-  ],
-  "skills/security": [
-    "body"
-  ],
-  "skills/seo": [
-    "frontmatter"
-  ],
-  "skills/testing": [
-    "body"
-  ],
-  "skills/ui-ux": [
-    "frontmatter"
-  ],
-  "skills/version-control": [
-    "frontmatter"
   ]
 }
