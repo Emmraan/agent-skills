@@ -231,6 +231,7 @@
       "title": "Testing & Quality",
       "skills": [
         "browser-testing-with-devtools",
+        "change-friendly-code",
         "code-reviewer",
         "code-simplification",
         "debugging-wizard",
