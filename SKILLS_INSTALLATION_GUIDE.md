@@ -58,6 +58,7 @@ a category, say why.
 DETECTION REFERENCE (project signal → project type → pack):
 - package.json + react/next/vue/svelte/angular → Web app — frontend
 - package.json + gsap/motion/three/pixi/lottie → Animation / 3D
+- creative/awwwards/portfolio/agency/luxury-brand site → Creative web design
 - package.json + shopify/theme.liquid → E-commerce (Shopify)
 - composer.json + woocommerce/wp-content → E-commerce (WordPress)
 - requirements.txt/pyproject.toml + fastapi/django → Backend / API
@@ -211,7 +212,20 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend
 
 Key skills: `gsap-core`, `gsap-scrolltrigger`, `gsap-react`, `motion`, `threejs-webgl`, `react-three-fiber`, `pixijs-2d`, `lottie-animations`, `barba-js`, `frontend-craft`, `top-design`.
 
-#### 9. Existing site improvement
+#### 9. Creative / Awwwards-level site
+
+Sites where the experience itself is the product: agency, portfolio, luxury/fashion, cultural, or brand launch.
+
+```bash
+npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/creative-web-design
+npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/animation-webgl
+npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/design-ux
+npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend-ui
+```
+
+Key skills: `creative-web-orchestrator`, `creative-library-selector`, `creative-motion-scroll`, `creative-webgl-shaders`, `creative-interactions`, `creative-web-performance`, `top-design`, `frontend-craft`, `gsap-scrolltrigger`, `threejs-webgl`, `barba-js`.
+
+#### 10. Existing site improvement
 
 A live site that underperforms — fix conversion, UX, speed, or SEO.
 
@@ -224,7 +238,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-
 
 Key skills: `improve-website`, `grow-website`, `cro-methodology`, `seo`, `refactoring-ui`, `ux-heuristics`, `frontend-performance`, `high-perf-browser`, `browser-testing-with-devtools`. Use `create-website` only if rebuilding from scratch.
 
-#### 10. Enterprise / industry-scale system
+#### 11. Enterprise / industry-scale system
 
 Multiple services, real deployments, SLOs, and production rigor.
 
@@ -260,7 +274,7 @@ npx skills --help
 ```
 
 Available categories (full command list in [SKILLS_CATEGORIES.md](SKILLS_CATEGORIES.md)):
-`frontend-ui`, `animation-webgl`, `backend-apis`, `languages`, `databases-data`, `ai-ml`, `devops-cloud`, `testing-quality`, `design-ux`, `marketing-growth`, `agent-meta`.
+`frontend-ui`, `animation-webgl`, `creative-web-design`, `backend-apis`, `languages`, `databases-data`, `ai-ml`, `devops-cloud`, `testing-quality`, `design-ux`, `marketing-growth`, `agent-meta`.
 
 ### Verify it works
 

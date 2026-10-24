@@ -14,6 +14,12 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/frontend
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/animation-webgl
 ```
 
+## Creative Web Design
+
+```bash
+npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/creative-web-design
+```
+
 ## Backend & APIs
 
 ```bash

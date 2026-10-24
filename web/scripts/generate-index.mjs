@@ -15,6 +15,7 @@ const CATEGORY_TITLES = {
   'ai-ml': 'AI & Machine Learning',
   'animation-webgl': 'Animation & WebGL',
   'backend-apis': 'Backend & APIs',
+  'creative-web-design': 'Creative Web Design',
   'databases-data': 'Databases & Data',
   'design-ux': 'Design & UX',
   'devops-cloud': 'DevOps & Cloud',

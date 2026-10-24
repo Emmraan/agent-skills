@@ -103,6 +103,17 @@
       ]
     },
     {
+      "title": "Creative Web Design",
+      "skills": [
+        "creative-interactions",
+        "creative-library-selector",
+        "creative-motion-scroll",
+        "creative-web-orchestrator",
+        "creative-web-performance",
+        "creative-webgl-shaders"
+      ]
+    },
+    {
       "title": "Databases & Data",
       "skills": [
         "database-architecture",

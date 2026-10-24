@@ -8,6 +8,7 @@ All notable changes to this repository are documented in this file. The format f
 
 - Repository-level L2 (team/community) scaffold: `.gitignore`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, `.github/dependabot.yml`, `.github/pull_request_template.md`, and GitHub Actions CI (`validate` + `web` builds with path filters).
 - husky pre-commit hook with lint-staged (`package.json`, `.husky/pre-commit`) that runs `validate-skills.mjs` on staged `SKILL.md` files. Install deps yourself with `pnpm install` at the repo root.
+- New `creative-web-design` category with six skills and six references for Awwwards-level work: experience orchestration, effect-to-library selection, motion/scroll integration, WebGL/shaders, creative interactions, and runtime performance.
 
 ### Changed
 
