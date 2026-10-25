@@ -6,7 +6,7 @@
 
 ## 1. Purpose and scope
 
-This repo holds 170+ agent skills (`skills/**/SKILL.md`) plus an optional React/Vite browser UI (`web/`). There is no unit-test suite, no linter, no typechecker. The only automated gates are:
+This repo holds 180+ agent skills (`skills/**/SKILL.md`) plus an optional React/Vite browser UI (`web/`). There is no unit-test suite, no linter, no typechecker. The only automated gates are:
 
 1. `scripts/validate-skills.mjs` — skill spec + prompt-injection hygiene + destructive-command safety + secret-values scan.
 2. `web` build — `pnpm build` regenerates `src/data/skills-index.json` and `skills.sh.json`.
