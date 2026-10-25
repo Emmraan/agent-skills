@@ -67,7 +67,7 @@ Run top to bottom. Stop at the first failure.
 
 - [ ] Web UI builds.
 - Classification: **Mandatory** · Stage: **BEFORE_PR** · Applies when: any `web/**` changed.
-- Commands (from `web/`; CI uses Node 20 + pnpm 10.33.2):
+- Commands (from `web/`; CI reads Node and pnpm versions from the root `package.json` — currently Node 24 and pnpm 12):
   ```bash
   cd web
   pnpm install --frozen-lockfile
@@ -142,7 +142,7 @@ Do §5 plus only the block that matches your change. Skip the rest.
 
 ### T4 — Docs / category / install-guide only
 
-1. No validator or build run required unless you touched skills or `web/**` (CI path filters: `ci.yml:6-26`, `web.yml:4-10`). — Conditional.
+1. No validator or build run required unless you touched skills or `web/**` (CI path filters: `ci.yml:6-26`, `web.yml:4-12`). — Conditional.
 2. Install commands copy-pasteable; category lists match `skills.sh.json` groupings. — Mandatory (reviewability).
 3. Evidence: state "docs-only, no skill/web paths touched" in Testing section.
 
@@ -241,7 +241,7 @@ Do not implement automation in this task — proposals only.
 - `CONTRIBUTING.md` — contribution rules, validation command, commit conventions, PR rules
 - `.github/pull_request_template.md` — required PR sections
 - `.github/workflows/ci.yml` — skill validation gate (path-filtered)
-- `.github/workflows/web.yml` — web build gate (Node 20, pnpm 10.33.2)
+- `.github/workflows/web.yml` — web build gate (Node 24, pnpm 12, both pinned in `package.json`)
 - `.github/workflows/sweep.yml` — weekly full sweep (informational, not a PR gate)
 - `scripts/validate-skills.mjs` — exact spec/hygiene/safety/secret rules
 - `scripts/validate-grandfather.json` — legacy waivers (maintainer review only)

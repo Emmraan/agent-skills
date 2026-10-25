@@ -14,4 +14,5 @@ All notable changes to this repository are documented in this file. The format f
 
 ### Changed
 
+- CI toolchain versions now have a single source of truth in the root `package.json`: Node 24 via `engines.node` and pnpm 12 via `packageManager`. Workflows read them with `node-version-file: package.json` and omit the pnpm `version` input, so the two can no longer disagree.
 - Low-end machine rule: heavy installs/builds are the user's job (agent runs them only on request); fast commands (config writes, staged-file lint) auto-run. Applied in `repository-foundation-scaffold`, `saas-production-engineering`, and `docs/reference/tooling-speed-notes.md`.
