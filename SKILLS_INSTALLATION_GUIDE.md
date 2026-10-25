@@ -153,7 +153,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/devops-c
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-quality
 ```
 
-Key skills: `frontend-core`, `frontend-craft`, `backend-core`, `backend-craft`, `api-design`, `authentication`, `database-architecture`, `security`, `browser-testing-with-devtools`, `playwright-expert`.
+Key skills: `frontend-core`, `frontend-craft`, `backend-core`, `backend-craft`, `api-design`, `authentication`, `database-architecture`, `security`, `security-baseline`, `browser-testing-with-devtools`, `playwright-expert`.
 
 #### 4. Backend / API only
 
@@ -166,7 +166,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/devops-c
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-quality
 ```
 
-Key skills: `backend-core`, `backend-craft`, `api-design`, `authentication`, `caching`, `messaging`, `database-architecture`, `database-performance`, `security`, `testing`, `test-master`. Add your language skill from `languages/` (`node`, `python-pro`, `golang-pro`, `java-architect`, etc.).
+Key skills: `backend-core`, `backend-craft`, `api-design`, `authentication`, `caching`, `messaging`, `database-architecture`, `database-performance`, `security`, `security-baseline`, `testing`, `test-master`. Add your language skill from `languages/` (`node`, `python-pro`, `golang-pro`, `java-architect`, etc.).
 
 #### 5. Mobile app (Flutter)
 
@@ -250,7 +250,7 @@ npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/devops-c
 npx skills add https://github.com/Emmraan/agent-skills/tree/main/skills/testing-quality
 ```
 
-Add: `architecture-designer`, `doubt-driven-development`, `fullstack-guardian`, `feature-forge`, `microservices-architect`, `security`, `devops`, `cloud`, `monitoring`, `sre-engineer`, `terraform-engineer`, `kubernetes-specialist`, `scalability`.
+Add: `architecture-designer`, `doubt-driven-development`, `fullstack-guardian`, `feature-forge`, `microservices-architect`, `security`, `security-baseline`, `devops`, `cloud`, `monitoring`, `sre-engineer`, `terraform-engineer`, `kubernetes-specialist`, `scalability`.
 
 ---
 
